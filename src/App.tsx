@@ -203,7 +203,22 @@ function App() {
         <div className="content-show-all">お知らせをすべて見る</div>
       </div>
 
-      <div id="layout-footer"></div>
+      <div id="layout-footer">
+        <div className="contact-area">
+          <div className="title">ご相談・お問い合わせ</div>
+          <div className="contact-link" />
+        </div>
+        <div className="nav">
+          <ul className="nav-items">
+            <li>個人情報の取り扱いについて</li>
+            <li>サイトマップ</li>
+            <li>品質方針・環境方針</li>
+          </ul>
+          <div className="copyright">
+            Rainbow Japan Ltd., All rights reserved.
+          </div>
+        </div>
+      </div>
 
       <div id="layout-header">
         <header className="header">
