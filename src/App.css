@@ -95,7 +95,7 @@ li.nav-item {
 }
 
 .contents {
-  padding: 20px 0 20px 20px;
+  padding: 20px;
   background-color: #EEE;
 }
 
@@ -197,7 +197,7 @@ li.slide img {
 
 .content-title {
   text-align: left;
-  padding: 10px;
+  padding: 5ex 10px 10px 10px;
   margin-bottom: 4ex;
 }
 
@@ -215,7 +215,7 @@ li.slide img {
 }
 
 .content-main {
-  padding: 5px;
+  padding: 5ex 10px 10px 10px;
   margin: 10px 0px;
 }
 
@@ -281,4 +281,135 @@ li.slide img {
 
 .content-show-all {
   text-align: right;
+}
+
+#layout-achiebement {
+  padding: 0 5vh;
+}
+
+#layout-achiebement .content-main {
+  padding: 5px;
+}
+
+.pickup {
+  position: relative;
+  text-align: left;
+  margin-bottom: 48x;
+}
+
+.pickup .image {
+  width: 50%;
+  position: relative;
+}
+
+.pickup .image img{
+  width: 100%;
+  position: relative;
+}
+
+.pickup .card {
+  position: absolute;
+  width: 45%;
+  padding: 5%;
+  background-color: #fff;
+  right: 0;
+  top: 3ex;
+  margin: 2% 0;
+}
+
+.pickup .card .title {
+  font-size: x-large;
+  margin: 3px 0;
+}
+
+.card .subtitle {
+  font-size: small;
+  margin: 2ex 0;
+}
+
+.pickup .card .description {
+  font-size: medium;
+  margin: 2ex 0;
+}
+
+.card .link {
+  font-size: x-small;
+  color: #282c34;
+  padding: 5px 15px;
+  border-radius: 15px;
+  border: 1px solid #282c34;
+  width: fit-content;
+}
+
+ul.card-list {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+}
+
+.card-list li.card {
+  width: 33%;
+  text-align: left;
+  margin: 2ex;
+}
+
+.card-list li.card img {
+  width: 100%;
+  height: auto;
+}
+
+.card-list li.card .image {
+  margin-bottom: 1ex;
+}
+
+.card-list li.card title {
+  font-size: large;
+}
+
+#layout-notification {
+  padding: 0 5vh;
+}
+
+#layout-notification .content-title {
+  margin-bottom: 0;
+}
+
+#layout-notification .content-main {
+  padding-top: 0;
+}
+
+.notifications-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5ex;
+  /* padding-left: 5px; */
+}
+
+.notifications-list .row:first-child {
+  padding-top: 0;
+}
+
+.notifications-list .row {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  width: 100%;
+  padding: 5ex 0;
+  border-bottom: #CCC solid 1px;
+  text-align: left;
+  font-size: small;
+}
+
+.notifications-list .row .date {
+  font-weight: bold;
+  margin-right: 10px;
+  width: 13%;
+}
+
+.notifications-list .row .title {
+  margin-left: 10px;
 }

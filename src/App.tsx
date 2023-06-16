@@ -169,9 +169,39 @@ function App() {
             </li>
           </ul>
         </div>
+        <div className="content-show-all">制作実績をすべて見る</div>
       </div>
 
-      <div id="layout-notification" className="contents"></div>
+      <div id="layout-notification" className="contents">
+        <div className="content-title">
+          <div className="title">お知らせ</div>
+        </div>
+        <div className="content-main">
+          <div className="notifications-list">
+            <div className="row">
+              <span className="date">2023年3月10日</span>
+              <span className="title">
+                経済産業省によりレインボー・ジャパンが「健康経営優良法人2023」に認定されました。
+                今後も健康経営の取組みを続けます。
+              </span>
+            </div>
+            <div className="row">
+              <span className="date">2022年4月1日</span>
+              <span className="title">
+                ハイブリッドワーク（オフィスワークとテレワークを組み合わせた働き方）移行のお知らせ
+              </span>
+            </div>
+            <div className="row">
+              <span className="date">2022年3月9日</span>
+              <span className="title">
+                経済産業省によりレインボー・ジャパンが「健康経営優良法人2022」に認定されました。
+                今後も健康経営の取組みを続けます。
+              </span>
+            </div>
+          </div>
+        </div>
+        <div className="content-show-all">お知らせをすべて見る</div>
+      </div>
 
       <div id="layout-footer"></div>
 
@@ -185,7 +215,6 @@ function App() {
               <li className="nav-item">特徴</li>
               <li className="nav-item">サービス</li>
               <li className="nav-item">制作実績</li>
-              <li className="nav-item">コラム</li>
               <li className="nav-item">会社情報</li>
               <li className="nav-item">採用情報</li>
               <li className="nav-item">お知らせ</li>
