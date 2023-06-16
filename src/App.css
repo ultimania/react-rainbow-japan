@@ -94,6 +94,11 @@ li.nav-item {
   border-radius: 15px;
 }
 
+.contents {
+  padding: 20px 0 20px 20px;
+  background-color: #EEE;
+}
+
 #layout-main-view {
   padding-top: 70px;
 }
@@ -187,5 +192,93 @@ li.slide img {
   text-align: left;
   background-color: #fff;
   font-size: x-small;
-  padding: 13px 30px;
+  padding: 13px 7ex;
+}
+
+.content-title {
+  text-align: left;
+  padding: 10px;
+  margin-bottom: 4ex;
+}
+
+.content-title .title {
+  font-size: x-large;
+  font-weight: bold;
+  border-bottom: 3px solid blue;
+  margin: 1ex 0;
+  width: fit-content;
+}
+
+.content-title .description {
+  font-size: large;
+  padding: 1ex 0;
+}
+
+.content-main {
+  padding: 5px;
+  margin: 10px 0px;
+}
+
+#layout-service {
+  padding: 0 5vh;
+}
+
+#layout-service .content-main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 70vh;
+}
+
+.headline-list {
+  position: relative;
+  text-align: left;
+  width: 60%;
+  height: 100%;
+}
+
+.headline-list ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  padding-right: 4ex;
+  height: 100%;
+}
+
+.headline-list li {
+  border-top: 1px solid #CCC;
+  height: 25%;
+}
+
+.headline-list li:last-child {
+  border-bottom: 1px solid #CCC;
+}
+
+.headline-title {
+  padding: 3ex 4ex 1ex 20px;
+  font-size: medium;
+  font-weight: bold;
+}
+
+.headline-description {
+  padding: 1ex 3ex;
+  font-size: small;
+}
+
+.headline-image {
+  position: relative;
+  width: 40%;
+  height: 100%;
+}
+
+.headline-image img {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.content-show-all {
+  text-align: right;
 }
