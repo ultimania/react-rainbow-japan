@@ -29,7 +29,7 @@ import { IconEnum } from '../Types'
 import { ShowAllLink } from '../Elements/Link'
 import { ContentsTitle } from '../Elements/Label'
 import { InformationList } from '../Elements/List'
-import { info } from 'console'
+import { NavigationList } from '../Elements/List/NavigationList'
 
 export const MainLayout = () => {
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -60,17 +60,62 @@ export const MainLayout = () => {
 
   const informations = [
     {
-      "date": "20230310",
-      "title": "経済産業省によりレインボー・ジャパンが「健康経営優良法人2023」に認定されました。今後も健康経営の取組みを続けます。",
-      "url": "/dummy"
+      date: '20230310',
+      title:
+        '経済産業省によりレインボー・ジャパンが「健康経営優良法人2023」に認定されました。今後も健康経営の取組みを続けます。',
+      url: '/dummy',
     },
     {
-      "date": "20220401",
-      "title": "ハイブリッドワーク（オフィスワークとテレワークを組み合わせた働き方）移行のお知らせ"
+      date: '20220401',
+      title:
+        'ハイブリッドワーク（オフィスワークとテレワークを組み合わせた働き方）移行のお知らせ',
     },
     {
-      "date": "20220309",
-      "title": "経済産業省によりレインボー・ジャパンが「健康経営優良法人2022」に認定されました。今後も健康経営の取組みを続けます。"
+      date: '20220309',
+      title:
+        '経済産業省によりレインボー・ジャパンが「健康経営優良法人2022」に認定されました。今後も健康経営の取組みを続けます。',
+    },
+  ]
+
+  const headerNavItems = [
+    {
+      name: '特徴',
+      href: '/dummy',
+    },
+    {
+      name: 'サービス',
+      href: '/dummy',
+    },
+    {
+      name: '制作実績',
+      href: '/dummy',
+    },
+    {
+      name: '会社情報',
+      href: '/dummy',
+    },
+    {
+      name: '採用情報',
+      href: '/dummy',
+    },
+    {
+      name: 'お知らせ',
+      href: '/dummy',
+    },
+  ]
+
+  const footerNavItems = [
+    {
+      name: '個人情報の取り扱いについて',
+      href: '/dummy',
+    },
+    {
+      name: 'サイトマップ',
+      href: '/dummy',
+    },
+    {
+      name: '品質方針・環境方針',
+      href: '/dummy',
     },
   ]
 
@@ -219,7 +264,7 @@ export const MainLayout = () => {
       <div id="layout-notification" className="contents">
         <ContentsTitle title="お知らせ" />
         <div className="contents-main">
-          <InformationList contents={informations}/>
+          <InformationList contents={informations} />
         </div>
         <ShowAllLink>お知らせをすべて見る</ShowAllLink>
       </div>
@@ -229,12 +274,8 @@ export const MainLayout = () => {
           <div className="title">ご相談・お問い合わせ</div>
           <div className="contact-link" />
         </div>
-        <div className="nav">
-          <ul className="nav-items">
-            <li>個人情報の取り扱いについて</li>
-            <li>サイトマップ</li>
-            <li>品質方針・環境方針</li>
-          </ul>
+        <div className="nav-area">
+          <NavigationList items={footerNavItems} />
           <div className="copyright">
             Rainbow Japan Ltd., All rights reserved.
           </div>
@@ -247,14 +288,7 @@ export const MainLayout = () => {
             <img src={siteLogo} className="site-logo" alt="logo" />
           </div>
           <div className="nav-area">
-            <ul className="nav-main">
-              <li className="nav-item">特徴</li>
-              <li className="nav-item">サービス</li>
-              <li className="nav-item">制作実績</li>
-              <li className="nav-item">会社情報</li>
-              <li className="nav-item">採用情報</li>
-              <li className="nav-item">お知らせ</li>
-            </ul>
+            <NavigationList items={headerNavItems} />
             <Button
               className={`button-text ${isScrolled ? 'minimum' : ''}`}
               icon={IconEnum.Mail}

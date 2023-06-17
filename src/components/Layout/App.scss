@@ -148,9 +148,6 @@
   }
 }
 
-
-
-
 #layout-main-view {
   padding-top: 70px;
   
@@ -246,7 +243,6 @@
     padding: 13px 7ex;
   }
 }
-
 
 #layout-service {
   padding: 0 5vh;
@@ -447,7 +443,7 @@
     font-weight: bold;
   }
 
-  .nav {
+  .nav-area {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -455,7 +451,7 @@
     padding: 3vh 0;
     font-size: x-small;
 
-    ul.nav-items {
+    ul.nav-main {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
