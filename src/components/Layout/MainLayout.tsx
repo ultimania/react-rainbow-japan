@@ -28,6 +28,8 @@ import { Button } from '../Elements/Button'
 import { IconEnum } from '../Types'
 import { ShowAllLink } from '../Elements/Link'
 import { ContentsTitle } from '../Elements/Label'
+import { InformationList } from '../Elements/List'
+import { info } from 'console'
 
 export const MainLayout = () => {
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -54,6 +56,22 @@ export const MainLayout = () => {
     { id: 1, imgSrc: imgMv1, alt: 'img-mv1' },
     { id: 2, imgSrc: imgMv2, alt: 'img-mv2' },
     { id: 3, imgSrc: imgMv3, alt: 'img-mv3' },
+  ]
+
+  const informations = [
+    {
+      "date": "20230310",
+      "title": "経済産業省によりレインボー・ジャパンが「健康経営優良法人2023」に認定されました。今後も健康経営の取組みを続けます。",
+      "url": "/dummy"
+    },
+    {
+      "date": "20220401",
+      "title": "ハイブリッドワーク（オフィスワークとテレワークを組み合わせた働き方）移行のお知らせ"
+    },
+    {
+      "date": "20220309",
+      "title": "経済産業省によりレインボー・ジャパンが「健康経営優良法人2022」に認定されました。今後も健康経営の取組みを続けます。"
+    },
   ]
 
   return (
@@ -201,28 +219,7 @@ export const MainLayout = () => {
       <div id="layout-notification" className="contents">
         <ContentsTitle title="お知らせ" />
         <div className="contents-main">
-          <div className="notifications-list">
-            <div className="row">
-              <span className="date">2023年3月10日</span>
-              <span className="title">
-                経済産業省によりレインボー・ジャパンが「健康経営優良法人2023」に認定されました。
-                今後も健康経営の取組みを続けます。
-              </span>
-            </div>
-            <div className="row">
-              <span className="date">2022年4月1日</span>
-              <span className="title">
-                ハイブリッドワーク（オフィスワークとテレワークを組み合わせた働き方）移行のお知らせ
-              </span>
-            </div>
-            <div className="row">
-              <span className="date">2022年3月9日</span>
-              <span className="title">
-                経済産業省によりレインボー・ジャパンが「健康経営優良法人2022」に認定されました。
-                今後も健康経営の取組みを続けます。
-              </span>
-            </div>
-          </div>
+          <InformationList contents={informations}/>
         </div>
         <ShowAllLink>お知らせをすべて見る</ShowAllLink>
       </div>
