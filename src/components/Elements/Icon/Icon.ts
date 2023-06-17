@@ -10,6 +10,7 @@ import {
 } from '@mui/icons-material';
 
 export const Icon = {
+  'undefined': "",
   [IconEnum.Mail]: MailOutline,
   [IconEnum.ArrowUp]: ArrowUpward,
   [IconEnum.ArrowRight]: ArrowForward,

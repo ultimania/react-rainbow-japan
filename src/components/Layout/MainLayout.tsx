@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import siteLogo from '../../assets/siteLogo.svg'
 import imgMv1 from '../../assets/img_mv_01.jpg'
 import imgMv2 from '../../assets/img_mv_02.jpg'
@@ -27,10 +27,22 @@ import imgAc4 from '../../assets/siteLogo.svg'
 import { Button } from '../Elements/Button'
 import { IconEnum } from '../Types'
 
-
 export const MainLayout = () => {
-
   const [currentSlide, setCurrentSlide] = useState(0)
+
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop
+      setIsScrolled(scrollTop > 0)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
 
   const handleDotClick = (index: number) => {
     setCurrentSlide(index)
@@ -149,7 +161,9 @@ export const MainLayout = () => {
                 エネルギーや石油製品全般を扱う企業へのリブランディング。より企業向けの訴求を強化したリニューアル。
                 <br />
               </div>
-              <div className="link">コーポレートサイト</div>
+              <div className="link">
+                <Button outline>コーポレートサイト</Button>
+              </div>
             </div>
           </div>
           <ul className="card-list">
@@ -159,7 +173,9 @@ export const MainLayout = () => {
               </div>
               <div className="title">COBOTTA PRO デンソーウェーブ</div>
               <div className="subtitle">株式会社デンソーウェーブ</div>
-              <div className="link">ブランドサイト</div>
+              <div className="link">
+                <Button outline>ブランドサイト</Button>
+              </div>
             </li>
             <li className="card">
               <div className="image">
@@ -167,7 +183,9 @@ export const MainLayout = () => {
               </div>
               <div className="title">アビタス</div>
               <div className="subtitle">株式会社アビタス</div>
-              <div className="link">コーポレートサイト</div>
+              <div className="link">
+                <Button outline>コーポレートサイト</Button>
+              </div>
             </li>
             <li className="card">
               <div className="image">
@@ -175,7 +193,9 @@ export const MainLayout = () => {
               </div>
               <div className="title">アフレル</div>
               <div className="subtitle">株式会社アフレル</div>
-              <div className="link">コーポレートサイト</div>
+              <div className="link">
+                <Button outline>コーポレートサイト</Button>
+              </div>
             </li>
           </ul>
         </div>
@@ -244,7 +264,13 @@ export const MainLayout = () => {
               <li className="nav-item">採用情報</li>
               <li className="nav-item">お知らせ</li>
             </ul>
-            <Button icon={IconEnum.Mail} url="/contact">ご相談・お問い合わせ</Button>
+            <Button
+              className={`button-text ${isScrolled ? 'minimum' : ''}`}
+              icon={IconEnum.Mail}
+              url="/contact"
+            >
+              ご相談・お問い合わせ
+            </Button>
           </div>
         </header>
       </div>

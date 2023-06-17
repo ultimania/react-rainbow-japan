@@ -45,6 +45,19 @@
   padding: 5px 15px;
   border-radius: 15px;
   text-decoration: none;
+  width: fit-content;
+
+  &.outline {
+    background-color: transparent;
+    color: #282c34;
+    border: #282c34 solid 1px;
+
+  &:hover {
+    background-color: #282c34;
+    color: #fff;
+    border: #fff solid 1px;
+  }
+  }
 
   &-text {
     font-size: small;
@@ -63,7 +76,7 @@
     background-color: transparent;
     color: #282c34;
     border: #282c34 solid 1px;
-    transition: background-color 0.2s, color 1.0s, border 1.0s;
+    transition: background-color 0.2s, color 0.8s, border 0.8s;
   }
   
 }
@@ -324,15 +337,6 @@
       .description {
         font-size: medium;
         margin: 2ex 0;
-      }
-
-      .link {
-        font-size: x-small;
-        color: #282c34;
-        padding: 5px 15px;
-        border-radius: 15px;
-        border: 1px solid #282c34;
-        width: fit-content;
       }
     }
   }
