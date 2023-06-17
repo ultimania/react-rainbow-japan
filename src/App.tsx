@@ -11,7 +11,7 @@ import imgAc1 from './img_achibement_01.jpg'
 import imgAc2 from './img_achibement_02.jpg'
 import imgAc3 from './img_achibement_03.jpg'
 import imgAc4 from './img_achibement_04.jpg'
-import './App.css'
+import './App.scss'
 
 function App() {
   interface Slide {
@@ -71,7 +71,7 @@ function App() {
       </div>
 
       <div id="layout-service" className="contents">
-        <div className="content-title">
+        <div className="contents-title">
           <div className="title">サービス</div>
           <div className="description">
             webサイトの分析、設計、制作、運用、改善の一連を提供可能。
@@ -79,7 +79,7 @@ function App() {
             お悩みを解決し、ビジネス成果に繋げます。
           </div>
         </div>
-        <div className="content-main">
+        <div className="contents-main">
           <div className="headline-list">
             <ul>
               <li>
@@ -119,7 +119,7 @@ function App() {
       </div>
 
       <div id="layout-achiebement" className="contents">
-        <div className="content-title">
+        <div className="contents-title">
           <div className="title">制作実績</div>
           <div className="description">
             30年で500社。
@@ -127,7 +127,7 @@ function App() {
             webサイトの制作・改善・保守を中心に数多くの対応実績があります。
           </div>
         </div>
-        <div className="content-main">
+        <div className="contents-main">
           <div className="pickup">
             <div className="image">
               <img src={imgAc1} alt="img_achibement" />
@@ -173,10 +173,10 @@ function App() {
       </div>
 
       <div id="layout-notification" className="contents">
-        <div className="content-title">
+        <div className="contents-title">
           <div className="title">お知らせ</div>
         </div>
-        <div className="content-main">
+        <div className="contents-main">
           <div className="notifications-list">
             <div className="row">
               <span className="date">2023年3月10日</span>
