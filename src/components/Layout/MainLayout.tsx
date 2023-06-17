@@ -28,8 +28,7 @@ import { Button } from '../Elements/Button'
 import { IconEnum } from '../Types'
 import { ShowAllLink } from '../Elements/Link'
 import { ContentsTitle } from '../Elements/Label'
-import { InformationList } from '../Elements/List'
-import { NavigationList } from '../Elements/List/NavigationList'
+import { ImageCardList, InformationList, NavigationList } from '../Elements/List'
 
 export const MainLayout = () => {
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -119,6 +118,30 @@ export const MainLayout = () => {
     },
   ]
 
+  const achiebements = [
+    {
+      src: imgAc2,
+      title: 'COBOTTA PRO デンソーウェーブ',
+      subtitle: '株式会社デンソーウェーブ',
+      href: '/dummy',
+      buttonLabel: 'ブランドサイト'
+    },
+    {
+      src: imgAc3,
+      title: 'アビタス',
+      subtitle: '株式会社アビタス',
+      href: '/dummy',
+      buttonLabel: 'コーポレートサイト'
+    },
+    {
+      src: imgAc4,
+      title: 'アフレル',
+      subtitle: '株式会社アフレル',
+      href: '/dummy',
+      buttonLabel: 'コーポレートサイト'
+    }
+  ];
+  
   return (
     <>
       <div id="layout-main-view" className="contents">
@@ -225,38 +248,7 @@ export const MainLayout = () => {
               </div>
             </div>
           </div>
-          <ul className="card-list">
-            <li className="card">
-              <div className="image">
-                <img src={imgAc2} alt="imgAc2" />
-              </div>
-              <div className="title">COBOTTA PRO デンソーウェーブ</div>
-              <div className="subtitle">株式会社デンソーウェーブ</div>
-              <div className="link">
-                <Button outline>ブランドサイト</Button>
-              </div>
-            </li>
-            <li className="card">
-              <div className="image">
-                <img src={imgAc3} alt="imgAc3" />
-              </div>
-              <div className="title">アビタス</div>
-              <div className="subtitle">株式会社アビタス</div>
-              <div className="link">
-                <Button outline>コーポレートサイト</Button>
-              </div>
-            </li>
-            <li className="card">
-              <div className="image">
-                <img src={imgAc4} alt="imgAc4" />
-              </div>
-              <div className="title">アフレル</div>
-              <div className="subtitle">株式会社アフレル</div>
-              <div className="link">
-                <Button outline>コーポレートサイト</Button>
-              </div>
-            </li>
-          </ul>
+          <ImageCardList items={achiebements} />
         </div>
         <ShowAllLink>制作実績をすべて見る</ShowAllLink>
       </div>
