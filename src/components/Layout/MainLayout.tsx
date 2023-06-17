@@ -1,29 +1,31 @@
 import React, { useState } from 'react'
 import siteLogo from '../../assets/siteLogo.svg'
-// import imgMv1 from '../../assets/img_mv_01.jpg'
-// import imgMv2 from '../../assets/img_mv_02.jpg'
-// import imgMv3 from '../../assets/img_mv_03.jpg'
-// import imgSv1 from '../../assets/img_service_01.jpg'
-// import imgSv2 from '../../assets/img_service_02.jpg'
-// import imgSv3 from '../../assets/img_service_03.jpg'
+import imgMv1 from '../../assets/img_mv_01.jpg'
+import imgMv2 from '../../assets/img_mv_02.jpg'
+import imgMv3 from '../../assets/img_mv_03.jpg'
+import imgSv1 from '../../assets/img_service_01.jpg'
+import imgSv2 from '../../assets/img_service_02.jpg'
+import imgSv3 from '../../assets/img_service_03.jpg'
 // import imgSv4 from '../../assets/img_service_04.jpg'
-// import imgAc1 from '../../assets/img_achibement_01.jpg'
-// import imgAc2 from '../../assets/img_achibement_02.jpg'
-// import imgAc3 from '../../assets/img_achibement_03.jpg'
+import imgAc1 from '../../assets/img_achibement_01.jpg'
+import imgAc2 from '../../assets/img_achibement_02.jpg'
+import imgAc3 from '../../assets/img_achibement_03.jpg'
 // import imgAc4 from '../../assets/img_achibement_04.jpg'
 import './App.scss'
 
-import imgMv1 from '../../assets/siteLogo.svg'
-import imgMv2 from '../../assets/siteLogo.svg'
-import imgMv3 from '../../assets/siteLogo.svg'
-import imgSv1 from '../../assets/siteLogo.svg'
-import imgSv2 from '../../assets/siteLogo.svg'
-import imgSv3 from '../../assets/siteLogo.svg'
+// import imgMv1 from '../../assets/siteLogo.svg'
+// import imgMv2 from '../../assets/siteLogo.svg'
+// import imgMv3 from '../../assets/siteLogo.svg'
+// import imgSv1 from '../../assets/siteLogo.svg'
+// import imgSv2 from '../../assets/siteLogo.svg'
+// import imgSv3 from '../../assets/siteLogo.svg'
 import imgSv4 from '../../assets/siteLogo.svg'
-import imgAc1 from '../../assets/siteLogo.svg'
-import imgAc2 from '../../assets/siteLogo.svg'
-import imgAc3 from '../../assets/siteLogo.svg'
+// import imgAc1 from '../../assets/siteLogo.svg'
+// import imgAc2 from '../../assets/siteLogo.svg'
+// import imgAc3 from '../../assets/siteLogo.svg'
 import imgAc4 from '../../assets/siteLogo.svg'
+import { Button } from '../Elements/Button'
+import { IconEnum } from '../Types'
 
 
 export const MainLayout = () => {
@@ -242,9 +244,7 @@ export const MainLayout = () => {
               <li className="nav-item">採用情報</li>
               <li className="nav-item">お知らせ</li>
             </ul>
-            <div className="contact">
-              <span className="icon-label mail">ご相談・お問い合わせ</span>
-            </div>
+            <Button icon={IconEnum.Mail} url="/contact">ご相談・お問い合わせ</Button>
           </div>
         </header>
       </div>
