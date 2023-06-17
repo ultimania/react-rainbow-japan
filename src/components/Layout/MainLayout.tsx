@@ -26,6 +26,8 @@ import imgSv4 from '../../assets/siteLogo.svg'
 import imgAc4 from '../../assets/siteLogo.svg'
 import { Button } from '../Elements/Button'
 import { IconEnum } from '../Types'
+import { ShowAllLink } from '../Elements/Link'
+import { ContentsTitle } from '../Elements/Label'
 
 export const MainLayout = () => {
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -93,14 +95,11 @@ export const MainLayout = () => {
       </div>
 
       <div id="layout-service" className="contents">
-        <div className="contents-title">
-          <div className="title">サービス</div>
-          <div className="description">
-            webサイトの分析、設計、制作、運用、改善の一連を提供可能。
-            <br />
-            お悩みを解決し、ビジネス成果に繋げます。
-          </div>
-        </div>
+        <ContentsTitle title="サービス">
+          webサイトの分析、設計、制作、運用、改善の一連を提供可能。
+          <br />
+          お悩みを解決し、ビジネス成果に繋げます。
+        </ContentsTitle>
         <div className="contents-main">
           <div className="headline-list">
             <ul>
@@ -137,18 +136,15 @@ export const MainLayout = () => {
             <img src={imgSv4} alt="imgSv4" />
           </div>
         </div>
-        <div className="content-show-all">サービスをすべて見る</div>
+        <ShowAllLink>サービスをすべて見る</ShowAllLink>
       </div>
 
       <div id="layout-achiebement" className="contents">
-        <div className="contents-title">
-          <div className="title">制作実績</div>
-          <div className="description">
-            30年で500社。
-            <br />
-            webサイトの制作・改善・保守を中心に数多くの対応実績があります。
-          </div>
-        </div>
+        <ContentsTitle title="対応実績">
+          30年で500社。
+          <br />
+          webサイトの制作・改善・保守を中心に数多くの対応実績があります。
+        </ContentsTitle>
         <div className="contents-main">
           <div className="pickup">
             <div className="image">
@@ -199,13 +195,11 @@ export const MainLayout = () => {
             </li>
           </ul>
         </div>
-        <div className="content-show-all">制作実績をすべて見る</div>
+        <ShowAllLink>制作実績をすべて見る</ShowAllLink>
       </div>
 
       <div id="layout-notification" className="contents">
-        <div className="contents-title">
-          <div className="title">お知らせ</div>
-        </div>
+        <ContentsTitle title="お知らせ" />
         <div className="contents-main">
           <div className="notifications-list">
             <div className="row">
@@ -230,7 +224,7 @@ export const MainLayout = () => {
             </div>
           </div>
         </div>
-        <div className="content-show-all">お知らせをすべて見る</div>
+        <ShowAllLink>お知らせをすべて見る</ShowAllLink>
       </div>
 
       <div id="layout-footer">

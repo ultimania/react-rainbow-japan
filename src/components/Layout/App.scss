@@ -13,7 +13,7 @@
     text-align: left;
     padding: 5ex 10px 10px 10px;
     margin-bottom: 4ex;
-  
+    
     .title {
       font-size: x-large;
       font-weight: bold;
@@ -21,7 +21,7 @@
       margin: 1ex 0;
       width: fit-content;
     }
-  
+    
     .description {
       font-size: large;
       padding: 1ex 0;
@@ -31,6 +31,20 @@
   &-main {
     padding: 5ex 10px 10px 10px;
     margin: 10px 0px;
+  }
+
+  &-show-all {
+    text-align: right;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+
+    .text {
+      margin-right: 5px;
+    }
   }
 }
 
@@ -76,7 +90,7 @@
     background-color: transparent;
     color: #282c34;
     border: #282c34 solid 1px;
-    transition: background-color 0.2s, color 0.8s, border 0.8s;
+    transition: background-color 0.2s, color 0.6s, border 0.6s;
   }
   
 }
@@ -288,9 +302,6 @@
     }
   }
 
-  .content-show-all {
-    text-align: right;
-  }
 }
 
 #layout-achiebement {
