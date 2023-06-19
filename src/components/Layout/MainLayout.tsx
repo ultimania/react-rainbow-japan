@@ -17,7 +17,7 @@ import { Button } from '../Elements/Button'
 import { IconEnum } from '../Types'
 import { ShowAllLink } from '../Elements/Link'
 import { ContentsTitle } from '../Elements/Label'
-import { ImageCardList, InformationList, NavigationList } from '../Elements/List'
+import { HoverImageList, ImageCardList, InformationList, NavigationList } from '../Elements/List'
 
 export const MainLayout = () => {
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -131,6 +131,33 @@ export const MainLayout = () => {
     }
   ];
   
+  const headlines = [
+    {
+      title: 'webサイト制作',
+      description: '大規模サイトからランディングページまで。ご要望の形式でwebサイトを制作いたします。',
+      href: 'https://example.com/website-creation',
+      img: imgSv1
+    },
+    {
+      title: 'webサイトの改善・更新',
+      description: '集客や動線の改善から定型のページ更新作業まで、webサイト管理者の困りごとに寄り添います。',
+      href: 'https://example.com/website-improvement',
+      img: imgSv2
+    },
+    {
+      title: 'webマーケティング支援',
+      description: '課題発見のための調査分析から施策実施後の効果測定まで、特にGoogleアナリティクスの設定支援はお任せください。',
+      href: 'https://example.com/web-marketing-support',
+      img: imgSv3
+    },
+    {
+      title: 'UIデザイン',
+      description: 'スマホアプリ、webアプリ等のユーザーインターフェイスを制作します。デモ用のモック作成やデザインガイドラインの策定もご相談ください。',
+      href: 'https://example.com/ui-design',
+      img: imgSv4
+    }
+  ];
+
   return (
     <>
       <div id="layout-main-view" className="contents">
@@ -176,40 +203,7 @@ export const MainLayout = () => {
           お悩みを解決し、ビジネス成果に繋げます。
         </ContentsTitle>
         <div className="contents-main">
-          <div className="headline-list">
-            <ul>
-              <li>
-                <div className="headline-title">webサイト制作</div>
-                <div className="headline-description">
-                  大規模サイトからランディングページまで。ご要望の形式でwebサイトを制作いたします。
-                </div>
-              </li>
-              <li>
-                <div className="headline-title">webサイトの改善・更新</div>
-                <div className="headline-description">
-                  集客や動線の改善から定型のページ更新作業まで、webサイト管理者の困りごとに寄り添います。
-                </div>
-              </li>
-              <li>
-                <div className="headline-title">webマーケティング支援</div>
-                <div className="headline-description">
-                  課題発見のための調査分析から施策実施後の効果測定まで、特にGoogleアナリティクスの設定支援はお任せください。
-                </div>
-              </li>
-              <li>
-                <div className="headline-title">UIデザイン</div>
-                <div className="headline-description">
-                  スマホアプリ、webアプリ等のユーザーインターフェイスを制作します。デモ用のモック作成やデザインガイドラインの策定もご相談ください。
-                </div>
-              </li>
-            </ul>
-          </div>
-          <div className="headline-image">
-            <img src={imgSv1} alt="imgSv1" />
-            <img src={imgSv2} alt="imgSv2" />
-            <img src={imgSv3} alt="imgSv3" />
-            <img src={imgSv4} alt="imgSv4" />
-          </div>
+          <HoverImageList items={headlines} />
         </div>
         <ShowAllLink>サービスをすべて見る</ShowAllLink>
       </div>
