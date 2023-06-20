@@ -17,11 +17,15 @@ import { Button } from '../Elements/Button'
 import { IconEnum } from '../Types'
 import { ShowAllLink } from '../Elements/Link'
 import { ContentsTitle } from '../Elements/Label'
-import { HoverImageList, ImageCardList, InformationList, NavigationList } from '../Elements/List'
+import {
+  HoverImageList,
+  ImageCardList,
+  InformationList,
+  NavigationList,
+} from '../Elements/List'
+import { SlideShow } from '../Elements/ImageView'
 
 export const MainLayout = () => {
-  const [currentSlide, setCurrentSlide] = useState(0)
-
   const [isScrolled, setIsScrolled] = useState(false)
 
   useEffect(() => {
@@ -36,15 +40,7 @@ export const MainLayout = () => {
     }
   }, [])
 
-  const handleDotClick = (index: number) => {
-    setCurrentSlide(index)
-  }
-
-  const slides = [
-    { id: 1, imgSrc: imgMv1, alt: 'img-mv1' },
-    { id: 2, imgSrc: imgMv2, alt: 'img-mv2' },
-    { id: 3, imgSrc: imgMv3, alt: 'img-mv3' },
-  ]
+  const slides = [{ src: imgMv1 }, { src: imgMv2 }, { src: imgMv3 }]
 
   const informations = [
     {
@@ -113,50 +109,54 @@ export const MainLayout = () => {
       title: 'COBOTTA PRO デンソーウェーブ',
       subtitle: '株式会社デンソーウェーブ',
       href: '/dummy',
-      buttonLabel: 'ブランドサイト'
+      buttonLabel: 'ブランドサイト',
     },
     {
       src: imgAc3,
       title: 'アビタス',
       subtitle: '株式会社アビタス',
       href: '/dummy',
-      buttonLabel: 'コーポレートサイト'
+      buttonLabel: 'コーポレートサイト',
     },
     {
       src: imgAc4,
       title: 'アフレル',
       subtitle: '株式会社アフレル',
       href: '/dummy',
-      buttonLabel: 'コーポレートサイト'
-    }
-  ];
-  
+      buttonLabel: 'コーポレートサイト',
+    },
+  ]
+
   const headlines = [
     {
       title: 'webサイト制作',
-      description: '大規模サイトからランディングページまで。ご要望の形式でwebサイトを制作いたします。',
+      description:
+        '大規模サイトからランディングページまで。ご要望の形式でwebサイトを制作いたします。',
       href: 'https://example.com/website-creation',
-      img: imgSv1
+      img: imgSv1,
     },
     {
       title: 'webサイトの改善・更新',
-      description: '集客や動線の改善から定型のページ更新作業まで、webサイト管理者の困りごとに寄り添います。',
+      description:
+        '集客や動線の改善から定型のページ更新作業まで、webサイト管理者の困りごとに寄り添います。',
       href: 'https://example.com/website-improvement',
-      img: imgSv2
+      img: imgSv2,
     },
     {
       title: 'webマーケティング支援',
-      description: '課題発見のための調査分析から施策実施後の効果測定まで、特にGoogleアナリティクスの設定支援はお任せください。',
+      description:
+        '課題発見のための調査分析から施策実施後の効果測定まで、特にGoogleアナリティクスの設定支援はお任せください。',
       href: 'https://example.com/web-marketing-support',
-      img: imgSv3
+      img: imgSv3,
     },
     {
       title: 'UIデザイン',
-      description: 'スマホアプリ、webアプリ等のユーザーインターフェイスを制作します。デモ用のモック作成やデザインガイドラインの策定もご相談ください。',
+      description:
+        'スマホアプリ、webアプリ等のユーザーインターフェイスを制作します。デモ用のモック作成やデザインガイドラインの策定もご相談ください。',
       href: 'https://example.com/ui-design',
-      img: imgSv4
-    }
-  ];
+      img: imgSv4,
+    },
+  ]
 
   return (
     <>
@@ -166,27 +166,7 @@ export const MainLayout = () => {
             <h1>「つたえる」をデザインする。</h1>
             <h2>Web Marketing x Information Design</h2>
           </div>
-          <div className="main-slideshow">
-            <ul className="slideshow">
-              {slides.map((slide, index) => (
-                <li
-                  key={slide.id}
-                  className={`slide ${index === currentSlide ? 'active' : ''}`}
-                >
-                  <img src={slide.imgSrc} alt={slide.alt} />
-                </li>
-              ))}
-            </ul>
-            <div className="paging">
-              {slides.map((_, index) => (
-                <div
-                  key={index}
-                  className={`dot ${index === currentSlide ? 'active' : ''}`}
-                  onClick={() => handleDotClick(index)}
-                />
-              ))}
-            </div>
-          </div>
+          <SlideShow items={slides} />
         </div>
         <div className="company-description">
           レインボー・ジャパンは、webサイト、インターネットメディアを活用し、企業課題を解決するコンサルティング・webサイト制作会社です。
