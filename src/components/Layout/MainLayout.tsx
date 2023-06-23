@@ -24,9 +24,11 @@ import {
 } from '../..//data'
 import imgAc1 from '../../assets/img_achibement_01.jpg'
 
-
 export const MainLayout = () => {
   const [isScrolled, setIsScrolled] = useState(false)
+  const [fadeIn, setFadeIn] = useState(false)
+  const mainTextH1 = '「つたえる」をデザインする。'
+  const mainTextH2 = 'Web Marketing x Information Design'
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,6 +37,8 @@ export const MainLayout = () => {
     }
 
     window.addEventListener('scroll', handleScroll)
+    setFadeIn(true)
+
     return () => {
       window.removeEventListener('scroll', handleScroll)
     }
@@ -44,9 +48,17 @@ export const MainLayout = () => {
     <>
       <div id="layout-main-view" className="contents">
         <div className="main">
-          <div className="main-theme">
-            <h1>「つたえる」をデザインする。</h1>
-            <h2>Web Marketing x Information Design</h2>
+          <div className={`main-theme ${fadeIn ? 'fade-in' : ''}`}>
+            <h1>
+              {mainTextH1.split('').map((char, index) => (
+                <span key={index}>{char}</span>
+              ))}
+            </h1>
+            <h2>
+              {mainTextH2.split('').map((char, index) => (
+                <span key={index}>{char}</span>
+              ))}
+            </h2>
           </div>
           <SlideShow items={slides} />
         </div>
