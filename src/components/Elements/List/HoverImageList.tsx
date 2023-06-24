@@ -13,11 +13,26 @@ type HoverImageListProps = {
 }
 
 export const HoverImageList = (props: HoverImageListProps) => {
-  const [currentImage, setCurrentImage] = useState(props.items[0].img)
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(0)
+  const [isHovered, setIsHovered] = useState(false)
 
-  const handleMouseEnter = (img: string) => {
-    setCurrentImage(img);
-  };
+  const handleMouseEnter = (index: number) => {
+    setHoveredIndex(index)
+    setIsHovered(true)
+  }
+
+  const addDotAndAnimationToTitle = (title: string, index: number) => {
+    return (
+      <>
+        <span
+          className={`dot ${hoveredIndex === index ? 'fade-in' : 'fade-out'}`}
+        />
+        <span className={`text ${hoveredIndex === index ? 'hovered' : ''}`}>
+          {title}
+        </span>
+      </>
+    )
+  }
 
   return (
     <>
@@ -25,8 +40,13 @@ export const HoverImageList = (props: HoverImageListProps) => {
         <ul>
           {props.items.map((item, index) => (
             <SimpleLink href={item.href} key={index}>
-              <li onMouseEnter={() => handleMouseEnter(item.img)}>
-                <div className="headline-title">{item.title}</div>
+              <li
+                onMouseEnter={() => handleMouseEnter(index)}
+                className="headline-item"
+              >
+                <div className="headline-title">
+                  {addDotAndAnimationToTitle(item.title, index)}
+                </div>
                 <div className="headline-description">{item.description}</div>
               </li>
             </SimpleLink>
@@ -34,7 +54,15 @@ export const HoverImageList = (props: HoverImageListProps) => {
         </ul>
       </div>
       <div className="headline-image">
-        <img src={currentImage} alt="imgSv" />
+        {props.items.map((item, index) => (
+          <img
+            key={index}
+            src={item.img}
+            alt="imgSv"
+            style={{ zIndex: hoveredIndex === index ? 1 : 0 }}
+            className={`${hoveredIndex === index ? 'fade-in' : 'fade-out'}`}
+          />
+        ))}
       </div>
     </>
   )
