@@ -1,4 +1,4 @@
-import React, { ReactHTMLElement, ReactNode, useEffect, useState } from 'react'
+import React, { ReactNode } from 'react'
 import { IconEnum } from '../../Types'
 import { Icon } from '../Icon'
 import { SimpleLink } from '../Link'
@@ -18,6 +18,7 @@ export const Button = (props: ButtonProps) => {
     <SimpleLink
       className={`button ${props.outline && 'outline'}`}
       href={props.url ?? '/dummy'}
+      hoverEffect='button'
     >
       {props.icon && <IconText fontSize="small" />}
       <span className={`button-text ${props.className ?? ''}`}>

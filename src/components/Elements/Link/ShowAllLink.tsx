@@ -11,11 +11,16 @@ type ShowAllLinkProps = {
 export const ShowAllLink = (props: ShowAllLinkProps) => {
   const NextIcon = Icon[IconEnum.ArrowCircleRight]
   return (
-    <SimpleLink href={props.href ?? '/dummy'} className="link contents-show-all">
-      <span className="text">
-        {props.children}
-      </span> 
-      <NextIcon fontSize='large'/>
-    </SimpleLink>
+    <div className="show-all-link">
+      <SimpleLink
+        href={props.href ?? '/dummy'}
+        className="link"
+      >
+        <div className="text">{props.children}</div>
+        <div className="next-icon">
+          <NextIcon fontSize="large"/>
+        </div>
+      </SimpleLink>
+    </div>
   )
 }

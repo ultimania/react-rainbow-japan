@@ -19,7 +19,7 @@ export const InformationList = (props: InformationListProps) => {
           <div className="row" key={index}>
             <span className="date">{content.date}</span>
             {content.url ? (
-              <SimpleLink className="title" href={content.url}>
+              <SimpleLink className="title" href={content.url} hoverEffect='line'>
                 {content.title}
               </SimpleLink>
             ) : (

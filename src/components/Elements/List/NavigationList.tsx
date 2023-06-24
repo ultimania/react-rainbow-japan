@@ -15,7 +15,7 @@ export const NavigationList = (props: NavigationListProps) => {
     <ul className="nav-main">
       {props.items.map((item, index) => (
         <li className="nav-item" key={index}>
-          <SimpleLink href={item.href}>{item.name}</SimpleLink>
+          <SimpleLink href={item.href} hoverEffect='line'>{item.name}</SimpleLink>
         </li>
       ))}
     </ul>
