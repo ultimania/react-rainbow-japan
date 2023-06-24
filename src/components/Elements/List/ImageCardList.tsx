@@ -23,7 +23,7 @@ export const ImageCardList = (props: ImageCardListProps) => {
             <div className="image">
               <img src={card.src} alt={card.title} />
             </div>
-            <div className="title">{card.title}</div>
+            <div className="title"><span className="text">{card.title}</span></div>
             <div className="subtitle">{card.subtitle}</div>
             <div className="link">
               <Button outline>{card.buttonLabel}</Button>
