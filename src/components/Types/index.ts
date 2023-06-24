@@ -5,6 +5,7 @@ export enum IconEnum {
   ArrowDown = "ArrowDown",
   ArrowLeft = "ArrowLeft",
   ArrowCircleRight = "ArrowCircleRight",
+  ArrowCircleRightOutlined = "ArrowCircleRightOutlined",
   ArrowCircleLeft = "ArrowCircleLeft",
 }
 

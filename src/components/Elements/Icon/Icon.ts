@@ -6,6 +6,7 @@ import {
   ArrowDownward,
   ArrowBack,
   ArrowCircleRight,
+  ArrowCircleRightOutlined,
   ArrowCircleLeft,
 } from '@mui/icons-material';
 
@@ -17,5 +18,6 @@ export const Icon = {
   [IconEnum.ArrowDown]: ArrowDownward,
   [IconEnum.ArrowLeft]: ArrowBack,
   [IconEnum.ArrowCircleRight]: ArrowCircleRight,
+  [IconEnum.ArrowCircleRightOutlined]: ArrowCircleRightOutlined,
   [IconEnum.ArrowCircleLeft]: ArrowCircleLeft,
 }
