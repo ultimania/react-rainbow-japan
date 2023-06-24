@@ -27,7 +27,7 @@ export const HoverImageList = (props: HoverImageListProps) => {
         <span
           className={`dot ${hoveredIndex === index ? 'fade-in' : 'fade-out'}`}
         />
-        <span className={`text ${hoveredIndex === index ? 'hovered' : ''}`}>
+        <span className="text">
           {title}
         </span>
       </>
@@ -42,10 +42,10 @@ export const HoverImageList = (props: HoverImageListProps) => {
             <SimpleLink href={item.href} key={index}>
               <li
                 onMouseEnter={() => handleMouseEnter(index)}
-                className="headline-item"
+                className={`headline-item ${hoveredIndex === index ? 'hovered' : ''}`}
               >
                 <div className="headline-title">
-                  {addDotAndAnimationToTitle(item.title, index)}
+                  <span className="dot" /><span className='text'>{item.title}</span>
                 </div>
                 <div className="headline-description">{item.description}</div>
               </li>
