@@ -216,6 +216,32 @@
 
         li.nav-item {
           margin: 0 10px 0 10px;
+
+          .submenu {
+            position: fixed;
+            top: 7vh;
+            left: 0;
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            padding: 5px;
+            font-size: x-small;
+            width: 100%;
+            background-color: #fff;
+            .title {
+            }
+            .nav-items {
+              display: flex;
+              justify-content: right;
+              align-items: center;
+              padding: 5px;
+              font-size: x-small;
+
+              .nav-item {
+                padding: 10px;
+              }
+            }
+          }
         }
       }
     }

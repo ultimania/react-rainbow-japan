@@ -42,6 +42,32 @@ export const headerNavItems = [
   {
     name: 'サービス',
     href: '/dummy',
+    subItems: [
+      {
+        name: 'webサイト制作',
+        href: '/dummy',
+      },
+      {
+        name: 'webサイトの改善・更新',
+        href: '/dummy',
+      },
+      {
+        name: 'webマーケティング支援',
+        href: '/dummy',
+      },
+      {
+        name: 'UIデザイン',
+        href: '/dummy',
+      },
+      {
+        name: 'webサイトの制作フロー',
+        href: '/dummy',
+      },
+      {
+        name: 'webサイトの制作体制',
+        href: '/dummy',
+      },
+    ],
   },
   {
     name: '制作実績',
