@@ -14,24 +14,9 @@ type HoverImageListProps = {
 
 export const HoverImageList = (props: HoverImageListProps) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(0)
-  const [isHovered, setIsHovered] = useState(false)
 
   const handleMouseEnter = (index: number) => {
     setHoveredIndex(index)
-    setIsHovered(true)
-  }
-
-  const addDotAndAnimationToTitle = (title: string, index: number) => {
-    return (
-      <>
-        <span
-          className={`dot ${hoveredIndex === index ? 'fade-in' : 'fade-out'}`}
-        />
-        <span className="text">
-          {title}
-        </span>
-      </>
-    )
   }
 
   return (

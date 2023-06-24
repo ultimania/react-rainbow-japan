@@ -5,11 +5,13 @@ import imgMv3 from './assets/img_mv_03.jpg'
 import imgSv1 from './assets/img_service_01.jpg'
 import imgSv2 from './assets/img_service_02.jpg'
 import imgSv3 from './assets/img_service_03.jpg'
+import imgSv4 from './assets/img_service_04.jpg'
 import imgAc2 from './assets/img_achibement_02.jpg'
 import imgAc3 from './assets/img_achibement_03.jpg'
+import imgAc4 from './assets/img_achibement_04.jpg'
 
-import imgSv4 from './assets/siteLogo.svg'
-import imgAc4 from './assets/siteLogo.svg'
+// import imgSv4 from './assets/siteLogo.svg'
+// import imgAc4 from './assets/siteLogo.svg'
 
 export const slides = [{ src: imgMv1 }, { src: imgMv2 }, { src: imgMv3 }]
 
