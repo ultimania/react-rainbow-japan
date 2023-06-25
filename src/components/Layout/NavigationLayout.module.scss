@@ -1,0 +1,37 @@
+#layout-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0);
+  z-index: 100;
+
+  .header {
+    display: flex;
+    height: fit-content;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    width: 100%;
+
+    .site-logo-area {
+      display: flex;
+      justify-content: flex-start;
+      margin-left: 50px;
+
+      img.site-logo {
+        width: 100px;
+        height: auto;
+      }
+    }
+
+    .nav-area {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 5px;
+      font-size: x-small;
+      margin-right: 30px;
+    }
+  }
+}
+

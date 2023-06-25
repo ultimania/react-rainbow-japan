@@ -3,6 +3,7 @@ import { NavigationList } from '../Elements/List'
 import { Button } from '../Elements/Button'
 import { IconEnum } from '../Types'
 import siteLogo from '../../assets/siteLogo.svg';
+import styleModule from './NavigationLayout.module.scss'
 
 import {
   headerNavItems,
@@ -24,19 +25,18 @@ export const NavigationLayout = () => {
     };
   }, []);
 
-
   return (
-    <div id="layout-header">
-      <header className="header">
-        <div className="site-logo-area">
-          <img src={siteLogo} className="site-logo" alt="logo" />
+    <div id={styleModule["layout-header"]}>
+      <header className={styleModule["header"]}>
+        <div className={styleModule["site-logo-area"]}>
+          <img src={siteLogo} className={styleModule["site-logo"]} alt="logo" />
         </div>
-        <div className="nav-area">
+        <div className={styleModule["nav-area"]}>
           <NavigationList items={headerNavItems} />
           <Button
-            className={`button-text ${isScrolled ? 'minimum' : ''}`}
+            minimum={isScrolled}
             icon={IconEnum.Mail}
-            url="/contact"
+            href="/contact"
           >
             Consultation and Contact
           </Button>
