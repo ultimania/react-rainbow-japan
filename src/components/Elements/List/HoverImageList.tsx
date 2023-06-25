@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { SimpleLink } from '../Link'
 import styleModule from './HoverImageList.module.scss'
 
 type HoverImageItem = {
@@ -21,32 +20,39 @@ export const HoverImageList = (props: HoverImageListProps) => {
   }
 
   return (
-    <div className={styleModule["hover-image-list"]}>
-      <div className={styleModule["headline-list"]}>
-        <ul>
-          {props.items.map((item, index) => (
-            <SimpleLink href={item.href} key={index}>
-              <li
-                onMouseEnter={() => handleMouseEnter(index)}
-                className={`${styleModule["headline-item"]} ${hoveredIndex === index ? styleModule["hovered"] : ''}`}
-              >
-                <div className={styleModule["headline-title"]}>
-                  <span className={styleModule["dot"]} /><span className={styleModule["text"]}>{item.title}</span>
-                </div>
-                <div className={styleModule["headline-description"]}>{item.description}</div>
-              </li>
-            </SimpleLink>
-          ))}
-        </ul>
-      </div>
-      <div className={styleModule["headline-image"]}>
+    <div className={styleModule['hover-image-list']}>
+      <ul className={styleModule['headline-list']}>
+        {props.items.map((item, index) => (
+          <a href={item.href} key={index} >
+            <li
+              onMouseEnter={() => handleMouseEnter(index)}
+              className={`${styleModule['headline-item']} ${
+                hoveredIndex === index ? styleModule['hovered'] : ''
+              }`}
+            >
+              <div className={styleModule['headline-title']}>
+                <span className={styleModule['dot']} />
+                <span className={styleModule['text']}>{item.title}</span>
+              </div>
+              <div className={styleModule['headline-description']}>
+                {item.description}
+              </div>
+            </li>
+          </a>
+        ))}
+      </ul>
+      <div className={styleModule['headline-image']}>
         {props.items.map((item, index) => (
           <img
             key={index}
             src={item.img}
             alt="imgSv"
             style={{ zIndex: hoveredIndex === index ? 1 : 0 }}
-            className={`${hoveredIndex === index ? styleModule["fade-in"] : styleModule["fade-out"]}`}
+            className={`${
+              hoveredIndex === index
+                ? styleModule['fade-in']
+                : styleModule['fade-out']
+            }`}
           />
         ))}
       </div>

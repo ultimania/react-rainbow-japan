@@ -1,7 +1,6 @@
-import React, { ReactNode, useState } from 'react'
-import { IconEnum } from '../../Types'
-import { Icon } from '../Icon'
+import React, { ReactNode } from 'react'
 import { SimpleLink } from './SimpleLink'
+import styleModule from './ShowAllLink.module.scss'
 
 type ShowAllLinkProps = {
   children: ReactNode
@@ -9,32 +8,16 @@ type ShowAllLinkProps = {
 }
 
 export const ShowAllLink = (props: ShowAllLinkProps) => {
-  const [isHovered, setIsHovered] = useState(false)
-  const NextIcon = isHovered
-    ? Icon[IconEnum.ArrowCircleRightOutlined]
-    : Icon[IconEnum.ArrowCircleRight]
-
-  const handleMouseEnter = () => {
-    setIsHovered(true)
-  }
-
-  const handleMouseLeave = () => {
-    setIsHovered(false)
-  }
-
   return (
-    <div className="show-all-link">
-      <SimpleLink
-        href={props.href ?? '/dummy'}
-        className="link"
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-      >
-        <div className="text">{props.children}</div>
-        <div className="next-icon">
-          <NextIcon fontSize="large" />
-        </div>
-      </SimpleLink>
+    <div className={styleModule['show-all-link']}>
+      <div className={styleModule['link']}>
+        <SimpleLink
+          href={props.href ?? '/dummy'}
+          arrow
+        >
+          <div className="text">{props.children}</div>
+        </SimpleLink>
+      </div>
     </div>
   )
 }

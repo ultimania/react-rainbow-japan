@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import './App.scss'
 
-import { ShowAllLink } from '../Elements/Link'
-import { ContentsTitle } from '../Elements/Label'
-import { HoverImageList } from '../Elements/List'
 import { SlideShow } from '../Elements/ImageView'
 
-import { slides, headlines } from '../..//data'
-import { NavigationLayout, FooterLayout, NotificationLayout, AcievementLayout } from './'
+import { slides } from '../..//data'
+import { NavigationLayout, FooterLayout, NotificationLayout, AcievementLayout, ServiceLayout } from './'
 
 export const MainLayout = () => {
   const [fadeIn, setFadeIn] = useState(false)
@@ -46,17 +43,7 @@ export const MainLayout = () => {
         </div>
       </div>
 
-      <div id="layout-service" className="contents">
-        <ContentsTitle title="Services">
-          We provide a series of services including web analysis, design,
-          development, operation, and improvement. We solve your problems and
-          contribute to your business success.
-        </ContentsTitle>
-        <div className="contents-main">
-          <HoverImageList items={headlines} />
-        </div>
-        <ShowAllLink>View all services</ShowAllLink>
-      </div>
+      <ServiceLayout />
 
       <AcievementLayout />
 

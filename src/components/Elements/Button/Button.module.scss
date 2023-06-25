@@ -8,24 +8,24 @@
   border: #fff solid 1px;
   padding: 5px 15px;
   border-radius: 15px;
-  text-decoration: none;
   width: fit-content;
-
+  
   &.outline {
     background-color: transparent;
     color: #282c34;
     border: #282c34 solid 1px;
-
+    
     &:hover {
       background-color: #282c34;
       color: #fff;
       border: #fff solid 1px;
     }
   }
-
+  
   &-text {
     font-size: small;
     margin-left: 5px;
+    text-decoration: none;
 
     &.minimum {
       margin-left: 0px;

@@ -1,0 +1,11 @@
+.show-all-link {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 2vh;
+
+  .link {
+    width: 25vh;
+  }
+}

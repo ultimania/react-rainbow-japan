@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
 import { SimpleLink } from '../Link'
-import { IconEnum } from '../../Types'
-import { Icon } from '../Icon'
 import styleModule from './NavigationList.module.scss'
 
 type NavigationItem = {
@@ -16,7 +14,7 @@ type NavigationListProps = {
 
 export const NavigationList = (props: NavigationListProps) => {
   const [hoverIndex, setHoverIndex] = useState<number | null>(null)
-  const NextIcon = Icon[IconEnum.ArrowRight]
+
 
   const handleItemHover = (index: number | null) => {
     setHoverIndex(index)
@@ -36,11 +34,8 @@ export const NavigationList = (props: NavigationListProps) => {
                 <div className={styleModule["nav-items"]}>
                   {item.subItems?.map((subItem, index) => (
                     <div className={styleModule["nav-item"]} key={index}>
-                      <SimpleLink href={subItem.href}>
-                        <span className="text">{subItem.name}</span>
-                        <span className="icon">
-                          <NextIcon />
-                        </span>
+                      <SimpleLink href={subItem.href} arrow>
+                        {subItem.name}
                       </SimpleLink>
                     </div>
                   ))}
@@ -62,7 +57,7 @@ export const NavigationList = (props: NavigationListProps) => {
           onMouseEnter={() => handleItemHover(index)}
           onMouseLeave={() => handleItemHover(null)}
         >
-          <SimpleLink href={item.href} hoverEffect="line">
+          <SimpleLink href={item.href}> 
             {item.name}
           </SimpleLink>
           {renderSubMenu(item, index)}

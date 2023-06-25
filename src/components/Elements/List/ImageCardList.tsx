@@ -20,7 +20,7 @@ export const ImageCardList = (props: ImageCardListProps) => {
     <ul className={styleModule['card-list']}>
       {props.items.map((card, index) => (
         <li key={index} className={styleModule['card']}>
-          <SimpleLink href={card.href}>
+          <a href={card.href}>
             <div className={styleModule['image']}>
               <img src={card.src} alt={card.title} />
             </div>
@@ -29,7 +29,7 @@ export const ImageCardList = (props: ImageCardListProps) => {
             </div>
             <div className={styleModule['subtitle']}>{card.subtitle}</div>
             <Button outline>{card.buttonLabel}</Button>
-          </SimpleLink>
+          </a>
         </li>
       ))}
     </ul>

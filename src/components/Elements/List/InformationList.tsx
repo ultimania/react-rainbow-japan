@@ -14,18 +14,18 @@ type InformationListProps = {
 
 export const InformationList = (props: InformationListProps) => {
   return (
-    <div className={styleModule["information-list"]}>
+    <div className={styleModule['information-list']}>
       {props.contents.map((content, index) => {
         return (
-          <div className={styleModule["row"]} key={index}>
-            <div className={styleModule["date"]}>{content.date}</div>
-            {content.url ? (
-              <SimpleLink className="title" href={content.url} hoverEffect='line'>
-                {content.title}
-              </SimpleLink>
-            ) : (
-                <div className={styleModule["title"]}>{content.title}</div>
-            )}
+          <div className={styleModule['row']} key={index}>
+            <div className={styleModule['date']}>{content.date}</div>
+            <div className={styleModule['title']}>
+              {content.url ? (
+                <SimpleLink arrow href={content.url}>{content.title}</SimpleLink>
+              ) : (
+                content.title
+              )}
+            </div>
           </div>
         )
       })}
