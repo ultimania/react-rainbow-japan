@@ -1,17 +1,14 @@
-import imgMv1 from './assets/img_mv_01.jpg'
-import imgMv2 from './assets/img_mv_02.jpg'
-import imgMv3 from './assets/img_mv_03.jpg'
+import imgMv1 from './assets/img_mv_01.webp'
+import imgMv2 from './assets/img_mv_02.webp'
+import imgMv3 from './assets/img_mv_03.webp'
 
-import imgSv1 from './assets/img_service_01.jpg'
-import imgSv2 from './assets/img_service_02.jpg'
-import imgSv3 from './assets/img_service_03.jpg'
-import imgSv4 from './assets/img_service_04.jpg'
-import imgAc2 from './assets/img_achibement_02.jpg'
-import imgAc3 from './assets/img_achibement_03.jpg'
-import imgAc4 from './assets/img_achibement_04.jpg'
-
-// import imgSv4 from './assets/siteLogo.svg'
-// import imgAc4 from './assets/siteLogo.svg'
+import imgSv1 from './assets/img_service_01.webp'
+import imgSv2 from './assets/img_service_02.webp'
+import imgSv3 from './assets/img_service_03.webp'
+import imgSv4 from './assets/img_service_04.webp'
+import imgAc2 from './assets/img_achievement_02.webp'
+import imgAc3 from './assets/img_achievement_03.webp'
+import imgAc4 from './assets/img_achievement_04.webp'
 
 export const slides = [{ src: imgMv1 }, { src: imgMv2 }, { src: imgMv3 }]
 
@@ -19,139 +16,139 @@ export const informations = [
   {
     date: '20230310',
     title:
-      '経済産業省によりレインボー・ジャパンが「健康経営優良法人2023」に認定されました。今後も健康経営の取組みを続けます。',
+      'Company A has been certified as "Excellent Health Management Corporation 2023" by the Ministry of Economy, Trade and Industry. We will continue our efforts in health management.',
     url: '/dummy',
   },
   {
     date: '20220401',
     title:
-      'ハイブリッドワーク（オフィスワークとテレワークを組み合わせた働き方）移行のお知らせ',
+      'Announcement of transition to hybrid work (combination of office work and telework).',
   },
   {
     date: '20220309',
     title:
-      '経済産業省によりレインボー・ジャパンが「健康経営優良法人2022」に認定されました。今後も健康経営の取組みを続けます。',
+      'Company A has been certified as "Excellent Health Management Corporation 2022" by the Ministry of Economy, Trade and Industry. We will continue our efforts in health management.',
   },
 ]
 
 export const headerNavItems = [
   {
-    name: '特徴',
+    name: 'Features',
     href: '/dummy',
   },
   {
-    name: 'サービス',
+    name: 'Services',
     href: '/dummy',
     subItems: [
       {
-        name: 'webサイト制作',
+        name: 'Website Creation',
         href: '/dummy',
       },
       {
-        name: 'webサイトの改善・更新',
+        name: 'Website Improvement/Updates',
         href: '/dummy',
       },
       {
-        name: 'webマーケティング支援',
+        name: 'Web Marketing Support',
         href: '/dummy',
       },
       {
-        name: 'UIデザイン',
+        name: 'UI Design',
         href: '/dummy',
       },
       {
-        name: 'webサイトの制作フロー',
+        name: 'Website Production Flow',
         href: '/dummy',
       },
       {
-        name: 'webサイトの制作体制',
+        name: 'Website Production Team',
         href: '/dummy',
       },
     ],
   },
   {
-    name: '制作実績',
+    name: 'Achievements',
     href: '/dummy',
   },
   {
-    name: '会社情報',
+    name: 'Company Information',
     href: '/dummy',
   },
   {
-    name: '採用情報',
+    name: 'Careers',
     href: '/dummy',
   },
   {
-    name: 'お知らせ',
+    name: 'Announcements',
     href: '/dummy',
   },
 ]
 
 export const footerNavItems = [
   {
-    name: '個人情報の取り扱いについて',
+    name: 'Privacy Policy',
     href: '/dummy',
   },
   {
-    name: 'サイトマップ',
+    name: 'Site Map',
     href: '/dummy',
   },
   {
-    name: '品質方針・環境方針',
+    name: 'Quality Policy/Environmental Policy',
     href: '/dummy',
   },
 ]
 
-export const achiebements = [
+export const achievements = [
   {
     src: imgAc2,
-    title: 'COBOTTA PRO デンソーウェーブ',
-    subtitle: '株式会社デンソーウェーブ',
+    title: 'Product A',
+    subtitle: 'Company B',
     href: '/dummy',
-    buttonLabel: 'ブランドサイト',
+    buttonLabel: 'Brand Site',
   },
   {
     src: imgAc3,
-    title: 'アビタス',
-    subtitle: '株式会社アビタス',
+    title: 'Product B',
+    subtitle: 'Company C',
     href: '/dummy',
-    buttonLabel: 'コーポレートサイト',
+    buttonLabel: 'Corporate Site',
   },
   {
     src: imgAc4,
-    title: 'アフレル',
-    subtitle: '株式会社アフレル',
+    title: 'Product C',
+    subtitle: 'Company D',
     href: '/dummy',
-    buttonLabel: 'コーポレートサイト',
+    buttonLabel: 'Corporate Site',
   },
 ]
 
 export const headlines = [
   {
-    title: 'webサイト制作',
+    title: 'Website Creation',
     description:
-      '大規模サイトからランディングページまで。ご要望の形式でwebサイトを制作いたします。',
+      'We create websites ranging from large-scale sites to landing pages according to your requirements.',
     href: 'https://example.com/website-creation',
     img: imgSv1,
   },
   {
-    title: 'webサイトの改善・更新',
+    title: 'Website Improvement/Updates',
     description:
-      '集客や動線の改善から定型のページ更新作業まで、webサイト管理者の困りごとに寄り添います。',
+      'We provide solutions for website administrators, from improving traffic and user flow to handling routine page updates.',
     href: 'https://example.com/website-improvement',
     img: imgSv2,
   },
   {
-    title: 'webマーケティング支援',
+    title: 'Web Marketing Support',
     description:
-      '課題発見のための調査分析から施策実施後の効果測定まで、特にGoogleアナリティクスの設定支援はお任せください。',
+      'From identifying issues through research and analysis to measuring the effectiveness of implemented strategies, we specialize in Google Analytics setup support.',
     href: 'https://example.com/web-marketing-support',
     img: imgSv3,
   },
   {
-    title: 'UIデザイン',
+    title: 'UI Design',
     description:
-      'スマホアプリ、webアプリ等のユーザーインターフェイスを制作します。デモ用のモック作成やデザインガイドラインの策定もご相談ください。',
+      'We create user interfaces for mobile apps, web apps, and more. Feel free to consult us for demo mock-ups and design guideline development.',
     href: 'https://example.com/ui-design',
     img: imgSv4,
   },

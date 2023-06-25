@@ -17,13 +17,13 @@ export const InformationList = (props: InformationListProps) => {
       {props.contents.map((content, index) => {
         return (
           <div className="row" key={index}>
-            <span className="date">{content.date}</span>
+            <div className="date">{content.date}</div>
             {content.url ? (
               <SimpleLink className="title" href={content.url} hoverEffect='line'>
                 {content.title}
               </SimpleLink>
             ) : (
-              <span className="title">{content.title}</span>
+              <div className="title">{content.title}</div>
             )}
           </div>
         )

@@ -29,17 +29,7 @@
   position: relative;
 
   &:hover {
-    &.hover-effect-line:after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: -2px;
-      width: 100%;
-      height: 2px;
-      background-color: black;
-      animation: underline 0.2s forwards;
-    }
-
+    &.hover-effect-line:after,
     .text:after {
       content: '';
       position: absolute;
@@ -56,6 +46,7 @@
       color: #282c34;
       border: #282c34 solid 1px;
       transition: background-color 0.2s, color 0.6s, border 0.6s;
+
       &.outline {
         background-color: #282c34;
         color: #fff;
@@ -64,7 +55,7 @@
     }
 
     img {
-      scale: 1.05;
+      transform: scale(1.05);
       transition: scale 0.2s;
     }
   }
@@ -73,13 +64,14 @@
 .show-all-link {
   display: flex;
   flex-direction: row;
-  justify-content: right;
+  justify-content: flex-end;
   align-items: center;
+  margin-top: 2vh;
 
   .simple-link {
     display: flex;
     flex-direction: row;
-    justify-content: right;
+    justify-content: flex-end;
     align-items: center;
   }
 }
@@ -125,7 +117,7 @@
     text-align: right;
     display: flex;
     flex-direction: row;
-    justify-content: right;
+    justify-content: flex-end;
     align-items: center;
     text-decoration: none;
     color: inherit;
@@ -200,7 +192,7 @@
 
     .site-logo-area {
       display: flex;
-      justify-content: left;
+      justify-content: flex-start;
       margin-left: 50px;
 
       img.site-logo {
@@ -211,7 +203,7 @@
 
     .nav-area {
       display: flex;
-      justify-content: right;
+      justify-content: flex-end;
       align-items: center;
       padding: 5px;
       font-size: x-small;
@@ -219,7 +211,7 @@
 
       ul.nav-main {
         display: flex;
-        justify-content: right;
+        justify-content: flex-end;
         list-style: none;
         margin: 0 10px;
 
@@ -231,7 +223,7 @@
             position: fixed;
             top: -100vh;
             display: flex;
-            justify-content: left;
+            justify-content: flex-start;
             align-items: center;
             padding: 5vh 0 10vh 5vh;
             font-size: medium;
@@ -243,7 +235,7 @@
             &.hoverd {
               top: 48px;
               left: 0;
-                opacity: 1;
+              opacity: 1;
             }
 
             .title {
@@ -252,8 +244,8 @@
             }
             .nav-items {
               display: grid;
-              grid-template-columns: repeat(3, 50%);
-              grid-template-rows: repeat(3, 50%);
+              grid-template-columns: repeat(3, 43%);
+              grid-template-rows: repeat(3, 43%);
               grid-column: 3;
               font-size: small;
 
@@ -390,12 +382,20 @@
   }
 }
 
-#layout-service {
-  padding: 0 5vh;
+// General styles
+.layout {
+  &-service,
+  &-achievement,
+  &-notification,
+  &-footer {
+    padding: 0 5vh;
+  }
+}
 
+// Service layout
+#layout-service {
   .contents-main {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     height: 70vh;
@@ -423,10 +423,12 @@
 
           &.hovered {
             background-color: #e9e9e9;
+            
             .headline-title {
               .dot {
                 opacity: 1;
               }
+
               .text {
                 animation: slideRight 0.3s forwards;
               }
@@ -452,6 +454,7 @@
               opacity: 0;
               transition: opacity 0.2s ease-out;
             }
+
             .text {
               position: absolute;
             }
@@ -493,9 +496,8 @@
   }
 }
 
-#layout-achiebement {
-  padding: 0 5vh;
-
+// Achievement layout
+#layout-achievement {
   .contents-main {
     padding: 5px;
   }
@@ -544,7 +546,6 @@
   ul.card-list {
     list-style: none;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding: 0;
@@ -556,10 +557,11 @@
 
       img {
         width: 100%;
-        height: auto;
+        height: 20vh;
       }
 
       .image {
+        height: 100%;
         margin-bottom: 1ex;
         overflow: hidden;
       }
@@ -579,6 +581,7 @@
   }
 }
 
+// Notification layout
 #layout-notification {
   padding: 0 5vh 10vh;
 
@@ -613,21 +616,24 @@
 
       .date {
         font-weight: bold;
+        padding: 10px;
         margin-right: 10px;
-        width: 13%;
+        width: 10%;
       }
 
       .title {
+        padding: 10px;
         margin-left: 10px;
+        width: 80%;
       }
     }
   }
 }
 
+// Footer layout
 #layout-footer {
   .contact-area {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     background-color: #000;
@@ -642,7 +648,6 @@
 
   .nav-area {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding: 3vh 0;
@@ -650,7 +655,6 @@
 
     ul.nav-main {
       display: flex;
-      flex-direction: row;
       justify-content: space-between;
       align-items: center;
       width: 100%;
