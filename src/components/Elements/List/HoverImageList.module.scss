@@ -1,0 +1,110 @@
+@keyframes slideRight {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(20px);
+  }
+}
+
+.hover-image-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 70vh;
+
+  .headline-list {
+    position: relative;
+    text-align: left;
+    width: 60%;
+    height: 100%;
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+      padding-right: 4ex;
+      height: 100%;
+
+      li {
+        border-top: 1px solid #ccc;
+        height: 25%;
+
+        &.headline-item {
+          transition: background-color 0.2s ease-out;
+
+          &.hovered {
+            background-color: #e9e9e9;
+
+            .headline-title {
+              .dot {
+                opacity: 1;
+              }
+
+              .text {
+                animation: slideRight 0.3s forwards;
+              }
+            }
+          }
+
+          .headline-title {
+            padding: 3ex 4ex 1ex 20px;
+            font-size: medium;
+            font-weight: bold;
+            position: relative;
+            display: flex;
+            align-items: center;
+            transition: opacity 0.2s ease-out;
+
+            .dot {
+              position: absolute;
+              width: 10px;
+              height: 10px;
+              border-radius: 50%;
+              background-color: blue;
+              margin-right: 4px;
+              opacity: 0;
+              transition: opacity 0.2s ease-out;
+            }
+
+            .text {
+              position: absolute;
+            }
+          }
+
+          .headline-description {
+            padding: 1ex 3ex;
+            font-size: small;
+          }
+        }
+      }
+
+      li:last-child {
+        border-bottom: 1px solid #ccc;
+      }
+    }
+  }
+
+  .headline-image {
+    position: relative;
+    width: 40%;
+    height: 100%;
+
+    img {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transition: opacity 0.3s ease-out;
+
+      &.fade-in {
+        opacity: 1;
+      }
+
+      &.fade-out {
+        opacity: 0;
+      }
+    }
+  }
+}
