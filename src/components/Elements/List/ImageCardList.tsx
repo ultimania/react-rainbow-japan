@@ -1,6 +1,7 @@
 import React from 'react'
 import { SimpleLink } from '../Link'
 import { Button } from '../Button'
+import styleModule from './ImageCardList.module.scss'
 
 type ImageCard = {
   src: string
@@ -16,18 +17,18 @@ type ImageCardListProps = {
 
 export const ImageCardList = (props: ImageCardListProps) => {
   return (
-    <ul className="card-list">
+    <ul className={styleModule['card-list']}>
       {props.items.map((card, index) => (
-        <li key={index} className="card">
+        <li key={index} className={styleModule['card']}>
           <SimpleLink href={card.href}>
-            <div className="image">
+            <div className={styleModule['image']}>
               <img src={card.src} alt={card.title} />
             </div>
-            <div className="title"><span className="text">{card.title}</span></div>
-            <div className="subtitle">{card.subtitle}</div>
-            <div className="link">
-              <Button outline>{card.buttonLabel}</Button>
+            <div className={styleModule['title']}>
+              <span className="text">{card.title}</span>
             </div>
+            <div className={styleModule['subtitle']}>{card.subtitle}</div>
+            <Button outline>{card.buttonLabel}</Button>
           </SimpleLink>
         </li>
       ))}

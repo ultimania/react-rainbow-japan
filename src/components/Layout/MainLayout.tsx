@@ -1,22 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import './App.scss'
 
-import { Button } from '../Elements/Button'
 import { ShowAllLink } from '../Elements/Link'
 import { ContentsTitle } from '../Elements/Label'
-import {
-  HoverImageList,
-  ImageCardList,
-} from '../Elements/List'
+import { HoverImageList } from '../Elements/List'
 import { SlideShow } from '../Elements/ImageView'
 
-import {
-  slides,
-  achievements,
-  headlines,
-} from '../..//data'
-import imgAc1 from '../../assets/img_achievement_01.webp'
-import { NavigationLayout, FooterLayout, NotificationLayout } from './'
+import { slides, headlines } from '../..//data'
+import { NavigationLayout, FooterLayout, NotificationLayout, AcievementLayout } from './'
 
 export const MainLayout = () => {
   const [fadeIn, setFadeIn] = useState(false)
@@ -67,33 +58,7 @@ export const MainLayout = () => {
         <ShowAllLink>View all services</ShowAllLink>
       </div>
 
-      <div id="layout-achievement" className="contents">
-        <ContentsTitle title="Achievements">
-          500 companies in 30 years. We have a wide range of experience in
-          website development, improvement, and maintenance.
-        </ContentsTitle>
-        <div className="contents-main">
-          <div className="pickup">
-            <div className="image">
-              <img src={imgAc1} alt="img_achibement" />
-            </div>
-            <div className="card">
-              <div className="title">Company A</div>
-              <div className="subtitle">Company B</div>
-              <div className="description">
-                Rebranding for a company dealing with energy and petroleum
-                products. A renewal that enhances the appeal to corporate
-                clients.
-              </div>
-              <div className="link">
-                <Button outline>Corporate Website</Button>
-              </div>
-            </div>
-          </div>
-          <ImageCardList items={achievements} />
-        </div>
-        <ShowAllLink>View all achievements</ShowAllLink>
-      </div>
+      <AcievementLayout />
 
       <NotificationLayout />
 
