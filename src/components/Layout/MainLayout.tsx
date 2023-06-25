@@ -7,19 +7,16 @@ import { ContentsTitle } from '../Elements/Label'
 import {
   HoverImageList,
   ImageCardList,
-  InformationList,
 } from '../Elements/List'
 import { SlideShow } from '../Elements/ImageView'
 
 import {
   slides,
-  informations,
   achievements,
   headlines,
 } from '../..//data'
 import imgAc1 from '../../assets/img_achievement_01.webp'
-import { NavigationLayout } from './NavigationLayout'
-import { FooterLayout } from './FooterLayout'
+import { NavigationLayout, FooterLayout, NotificationLayout } from './'
 
 export const MainLayout = () => {
   const [fadeIn, setFadeIn] = useState(false)
@@ -98,13 +95,7 @@ export const MainLayout = () => {
         <ShowAllLink>View all achievements</ShowAllLink>
       </div>
 
-      <div id="layout-notification" className="contents">
-        <ContentsTitle title="Notifications" />
-        <div className="contents-main">
-          <InformationList contents={informations} />
-        </div>
-        <ShowAllLink>View all notifications</ShowAllLink>
-      </div>
+      <NotificationLayout />
 
       <FooterLayout />
 
