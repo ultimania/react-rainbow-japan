@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { SimpleLink } from '../Link'
 import { IconEnum } from '../../Types'
 import { Icon } from '../Icon'
+import styleModule from './NavigationList.module.scss'
 
 type NavigationItem = {
   name: string
@@ -26,15 +27,15 @@ export const NavigationList = (props: NavigationListProps) => {
       item.subItems && (
         <>
           <div
-            className={`submenu ${hoverIndex === navIndex ? 'hoverd' : ''}`}
+            className={`${styleModule["submenu"]} ${hoverIndex === navIndex ? styleModule["hoverd"] : ''}`}
             onMouseEnter={() => handleItemHover(navIndex)}
           >
             {hoverIndex === navIndex && (
               <>
-                <div className="title">{`${item.name}TOP`}</div>
-                <div className="nav-items">
+                <div className={styleModule["title"]}>{`${item.name}TOP`}</div>
+                <div className={styleModule["nav-items"]}>
                   {item.subItems?.map((subItem, index) => (
-                    <div className="nav-item" key={index}>
+                    <div className={styleModule["nav-item"]} key={index}>
                       <SimpleLink href={subItem.href}>
                         <span className="text">{subItem.name}</span>
                         <span className="icon">
@@ -53,10 +54,10 @@ export const NavigationList = (props: NavigationListProps) => {
   }
 
   return (
-    <ul className="nav-main">
+    <ul className={styleModule["nav-main"]}>
       {props.items.map((item, index) => (
         <li
-          className="nav-item"
+          className={styleModule["nav-item"]}
           key={index}
           onMouseEnter={() => handleItemHover(index)}
           onMouseLeave={() => handleItemHover(null)}

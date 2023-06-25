@@ -1,48 +1,35 @@
-import React, { useEffect, useState } from 'react';
-import siteLogo from '../../assets/siteLogo.svg';
-import './App.scss';
+import React, { useEffect, useState } from 'react'
+import './App.scss'
 
-import { Button } from '../Elements/Button';
-import { IconEnum } from '../Types';
-import { ShowAllLink } from '../Elements/Link';
-import { ContentsTitle } from '../Elements/Label';
+import { Button } from '../Elements/Button'
+import { ShowAllLink } from '../Elements/Link'
+import { ContentsTitle } from '../Elements/Label'
 import {
   HoverImageList,
   ImageCardList,
   InformationList,
   NavigationList,
-} from '../Elements/List';
-import { SlideShow } from '../Elements/ImageView';
+} from '../Elements/List'
+import { SlideShow } from '../Elements/ImageView'
 
 import {
   slides,
   informations,
-  headerNavItems,
   footerNavItems,
   achievements,
   headlines,
-} from '../..//data';
-import imgAc1 from '../../assets/img_achievement_01.webp';
+} from '../..//data'
+import imgAc1 from '../../assets/img_achievement_01.webp'
+import { NavigationLayout } from './NavigationLayout'
 
 export const MainLayout = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [fadeIn, setFadeIn] = useState(false);
-  const mainTextH1 = 'Your Company\'s Main Theme';
-  const mainTextH2 = 'Your Company\'s Concepts';
+  const [fadeIn, setFadeIn] = useState(false)
+  const mainTextH1 = "Your Company's Main Theme"
+  const mainTextH2 = "Your Company's Concepts"
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY || document.documentElement.scrollTop;
-      setIsScrolled(scrollTop > 0);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    setFadeIn(true);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+    setFadeIn(true)
+  }, [])
 
   return (
     <>
@@ -63,16 +50,20 @@ export const MainLayout = () => {
           <SlideShow items={slides} />
         </div>
         <div className="company-description">
-          Company XYZ is a consulting and web development company that utilizes websites and internet media to solve corporate challenges.
+          Company XYZ is a consulting and web development company that utilizes
+          websites and internet media to solve corporate challenges.
         </div>
         <div className="important-info">
-          Company XYZ has been recognized as a Healthy Business Excellent Company 2023 by the Ministry of Economy, Trade and Industry.
+          Company XYZ has been recognized as a Healthy Business Excellent
+          Company 2023 by the Ministry of Economy, Trade and Industry.
         </div>
       </div>
 
       <div id="layout-service" className="contents">
         <ContentsTitle title="Services">
-          We provide a series of services including web analysis, design, development, operation, and improvement. We solve your problems and contribute to your business success.
+          We provide a series of services including web analysis, design,
+          development, operation, and improvement. We solve your problems and
+          contribute to your business success.
         </ContentsTitle>
         <div className="contents-main">
           <HoverImageList items={headlines} />
@@ -82,7 +73,8 @@ export const MainLayout = () => {
 
       <div id="layout-achievement" className="contents">
         <ContentsTitle title="Achievements">
-          500 companies in 30 years. We have a wide range of experience in website development, improvement, and maintenance.
+          500 companies in 30 years. We have a wide range of experience in
+          website development, improvement, and maintenance.
         </ContentsTitle>
         <div className="contents-main">
           <div className="pickup">
@@ -93,7 +85,9 @@ export const MainLayout = () => {
               <div className="title">Company A</div>
               <div className="subtitle">Company B</div>
               <div className="description">
-                Rebranding for a company dealing with energy and petroleum products. A renewal that enhances the appeal to corporate clients.
+                Rebranding for a company dealing with energy and petroleum
+                products. A renewal that enhances the appeal to corporate
+                clients.
               </div>
               <div className="link">
                 <Button outline>Corporate Website</Button>
@@ -126,23 +120,7 @@ export const MainLayout = () => {
         </div>
       </div>
 
-      <div id="layout-header">
-        <header className="header">
-          <div className="site-logo-area">
-            <img src={siteLogo} className="site-logo" alt="logo" />
-          </div>
-          <div className="nav-area">
-            <NavigationList items={headerNavItems} />
-            <Button
-              className={`button-text ${isScrolled ? 'minimum' : ''}`}
-              icon={IconEnum.Mail}
-              url="/contact"
-            >
-              Consultation and Contact
-            </Button>
-          </div>
-        </header>
-      </div>
+      <NavigationLayout />
     </>
-  );
-};
+  )
+}
