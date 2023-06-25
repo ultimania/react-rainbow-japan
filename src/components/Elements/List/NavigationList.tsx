@@ -21,24 +21,31 @@ export const NavigationList = (props: NavigationListProps) => {
     setHoverIndex(index)
   }
 
-  const renderSubMenu = (item: NavigationItem) => {
+  const renderSubMenu = (item: NavigationItem, navIndex: number) => {
     return (
       item.subItems && (
         <>
-          <div className="submenu">
-            <div className="title">{`${item.name}TOP`}</div>
-            <div className="nav-items">
-              {item.subItems?.map((subItem, index) => (
-                <div className="nav-item" key={index}>
-                  <SimpleLink href={subItem.href}>
-                    <span className="text">{subItem.name}</span>
-                    <span className="icon">
-                      <NextIcon />
-                    </span>
-                  </SimpleLink>
+          <div
+            className={`submenu ${hoverIndex === navIndex ? 'hoverd' : ''}`}
+            onMouseEnter={() => handleItemHover(navIndex)}
+          >
+            {hoverIndex === navIndex && (
+              <>
+                <div className="title">{`${item.name}TOP`}</div>
+                <div className="nav-items">
+                  {item.subItems?.map((subItem, index) => (
+                    <div className="nav-item" key={index}>
+                      <SimpleLink href={subItem.href}>
+                        <span className="text">{subItem.name}</span>
+                        <span className="icon">
+                          <NextIcon />
+                        </span>
+                      </SimpleLink>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
+              </>
+            )}
           </div>
         </>
       )
@@ -57,7 +64,7 @@ export const NavigationList = (props: NavigationListProps) => {
           <SimpleLink href={item.href} hoverEffect="line">
             {item.name}
           </SimpleLink>
-          {hoverIndex === index && renderSubMenu(item)}
+          {renderSubMenu(item, index)}
         </li>
       ))}
     </ul>
