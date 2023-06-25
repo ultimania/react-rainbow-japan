@@ -5,12 +5,14 @@ import { ShowAllLink } from '../Elements/Link'
 import {
   informations,
 } from '../../data'
+import styleModule from './NotificationLayout.module.scss'
+import styleCommonModule from './App.module.scss'
 
 export const NotificationLayout = () => {
   return (
-    <div id="layout-notification" className="contents">
+    <div id={styleModule["layout-notification"]} className={styleCommonModule["contents"]}>
       <ContentsTitle title="Notifications" />
-      <div className="contents-main">
+      <div className={styleModule["contents-main"]}>
         <InformationList contents={informations} />
       </div>
       <ShowAllLink>View all notifications</ShowAllLink>

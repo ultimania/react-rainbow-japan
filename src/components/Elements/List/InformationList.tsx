@@ -1,5 +1,6 @@
 import React from 'react'
 import { SimpleLink } from '../Link'
+import styleModule from './InformationList.module.scss'
 
 type Information = {
   date: string
@@ -13,17 +14,17 @@ type InformationListProps = {
 
 export const InformationList = (props: InformationListProps) => {
   return (
-    <div className="notifications-list">
+    <div className={styleModule["information-list"]}>
       {props.contents.map((content, index) => {
         return (
-          <div className="row" key={index}>
-            <div className="date">{content.date}</div>
+          <div className={styleModule["row"]} key={index}>
+            <div className={styleModule["date"]}>{content.date}</div>
             {content.url ? (
               <SimpleLink className="title" href={content.url} hoverEffect='line'>
                 {content.title}
               </SimpleLink>
             ) : (
-              <div className="title">{content.title}</div>
+                <div className={styleModule["title"]}>{content.title}</div>
             )}
           </div>
         )
