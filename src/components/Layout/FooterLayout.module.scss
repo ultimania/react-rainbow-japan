@@ -1,0 +1,31 @@
+// Footer layout
+#layout-footer {
+  .contact-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000;
+    color: #eee;
+    padding: 12vh 5vh;
+  }
+
+  .title {
+    font-size: x-large;
+    font-weight: bold;
+  }
+
+  .nav-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3vh 0;
+    font-size: x-small;
+
+    .copyright {
+      width: 100%;
+      text-align: right;
+      padding-right: 5%;
+      color: #999;
+    }
+  }
+}

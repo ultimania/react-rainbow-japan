@@ -8,19 +8,18 @@ import {
   HoverImageList,
   ImageCardList,
   InformationList,
-  NavigationList,
 } from '../Elements/List'
 import { SlideShow } from '../Elements/ImageView'
 
 import {
   slides,
   informations,
-  footerNavItems,
   achievements,
   headlines,
 } from '../..//data'
 import imgAc1 from '../../assets/img_achievement_01.webp'
 import { NavigationLayout } from './NavigationLayout'
+import { FooterLayout } from './FooterLayout'
 
 export const MainLayout = () => {
   const [fadeIn, setFadeIn] = useState(false)
@@ -107,18 +106,7 @@ export const MainLayout = () => {
         <ShowAllLink>View all notifications</ShowAllLink>
       </div>
 
-      <div id="layout-footer">
-        <div className="contact-area">
-          <div className="title">Consultation and Contact</div>
-          <div className="contact-link" />
-        </div>
-        <div className="nav-area">
-          <NavigationList items={footerNavItems} />
-          <div className="copyright">
-            Your Company Ltd., All rights reserved.
-          </div>
-        </div>
-      </div>
+      <FooterLayout />
 
       <NavigationLayout />
     </>
