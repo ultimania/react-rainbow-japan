@@ -1,5 +1,4 @@
 import React from 'react'
-import { SimpleLink } from '../Link'
 import { Button } from '../Button'
 import styleModule from './ImageCardList.module.scss'
 
