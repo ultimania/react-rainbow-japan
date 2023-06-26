@@ -2,6 +2,7 @@
   text-align: center;
   background-color: #eee;
   height: 100vh;
+  box-sizing: border-box;
 }
 
 /* ------------ 共通 ------------ */
@@ -162,11 +163,22 @@
 
   .important-info {
     width: 85%;
-    margin-left: 7ex;
     text-align: left;
     background-color: #fff;
     font-size: x-small;
-    padding: 13px 7ex;
+  }
+
+  @media (min-width: 769px) {
+    .important-info {
+      margin-left: 7ex;
+      padding: 13px 7ex;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .important-info {
+      margin-left: 0;
+      padding: 0;
+    }
   }
 }
-

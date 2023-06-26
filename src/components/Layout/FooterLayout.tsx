@@ -2,7 +2,7 @@ import React from 'react'
 import { NavigationList } from '../Elements/List'
 import {
   footerNavItems,
-} from '../..//data'
+} from '../../data'
 import sytleModule from './FooterLayout.module.scss'
 
 export const FooterLayout = () => {

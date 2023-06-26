@@ -44,4 +44,15 @@ ul.card-list {
       }
     }
   }
+
+  @media (min-width: 769px) {
+    li.card {
+      width: 33%; 
+    }
+  }
+  @media (max-width: 768px) {
+    li.card {
+      width: 25%;
+    }
+  }
 }
