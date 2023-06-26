@@ -7,7 +7,6 @@
 
 /* ------------ 共通 ------------ */
 .contents {
-  padding: 20px;
   background-color: #eee;
 
   &-title {
@@ -56,13 +55,11 @@
 
   .main {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
 
     &-theme {
       text-align: left;
-      margin-left: 50px;
       width: 100%;
 
       h1 {
@@ -155,30 +152,50 @@
   }
 
   .company-description {
-    margin: 5ex;
     text-align: left;
-    font-size: x-small;
-    padding: 10px;
+    font-size: small;
   }
 
   .important-info {
-    width: 85%;
     text-align: left;
     background-color: #fff;
-    font-size: x-small;
+    font-size: small;
   }
 
   @media (min-width: 769px) {
+    .main {
+      flex-direction: row;
+      &-theme {
+        margin-left: 50px;
+      }
+    }
+    .company-description {
+      margin: 2ex;
+      padding: 10px;
+    }
     .important-info {
       margin-left: 7ex;
       padding: 13px 7ex;
+      width: 85%;
     }
   }
 
   @media (max-width: 768px) {
+    .main {
+      flex-direction: column;
+      &-theme {
+        box-sizing: border-box;
+        padding: 0 20px;
+      }
+    }
+    .company-description {
+      margin: 2ex;
+      padding: 10px;
+    }
     .important-info {
-      margin-left: 0;
-      padding: 0;
+      box-sizing: border-box;
+      margin: 4ex;
+      padding: 20px;
     }
   }
 }
