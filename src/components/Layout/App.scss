@@ -11,7 +11,6 @@
 
   &-title {
     text-align: left;
-    padding: 5ex 10px 10px 10px;
     margin-bottom: 4ex;
 
     .title {
@@ -45,6 +44,18 @@
     .text {
       margin-right: 5px;
     }
+  }
+
+  @media (min-width: 769px) {
+    &-title {
+      padding: 5ex 10px 10px 10px;
+    }
+  
+  }
+  @media (max-width: 768px) {
+    &-title {
+      padding: 5px;
+    }  
   }
 }
 

@@ -9,7 +9,6 @@
 
 .hover-image-list {
   display: flex;
-  flex-direction: row;
   justify-content: flex-start;
   align-items: stretch;
   height: 70vh;
@@ -20,8 +19,6 @@
     list-style: none;
     margin: 0;
     padding-left: 0;
-    padding-right: 4ex;
-    width: 60%;
 
     a {
       text-decoration: none;
@@ -104,6 +101,29 @@
 
       &.fade-out {
         opacity: 0;
+      }
+    }
+  }
+  @media (min-width: 769px) {
+    flex-direction: row;
+
+    ul.headline-list {
+      padding-right: 4ex;
+      width: 60%;
+
+      a {
+      }
+    }
+  }
+  @media (max-width: 768px) {
+    flex-direction: column;
+
+    ul.headline-list {
+      a {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
       }
     }
   }
