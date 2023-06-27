@@ -5,7 +5,6 @@
   .pickup {
     position: relative;
     text-align: left;
-    margin-bottom: 20vh;
 
     .image {
       position: relative;
@@ -19,10 +18,8 @@
     .card {
       position: absolute;
       padding: 5%;
-      margin: 5%;
       background-color: #fff;
       right: 0;
-      top: 50%;
 
       .title {
         font-size: x-large;
@@ -37,6 +34,32 @@
       .description {
         font-size: medium;
         margin: 2ex 0;
+      }
+    }
+  }
+
+  @media (min-width: 769px){
+    padding: 0 5vh 10vh;
+
+    .pickup {
+      margin-bottom: 48px;
+      .image {
+        width: 50%;
+      }
+      .card {
+        width: 45%;
+        top: 3ex;
+        margin: 2% 0;
+      }
+    }
+  }
+
+  @media (max-width: 768px){
+    .pickup {
+      margin-bottom: 20vh;
+      .card {
+        top: 50%;
+        margin: 5%;
       }
     }
   }
