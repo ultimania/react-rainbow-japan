@@ -132,7 +132,7 @@ export const headlines = [
     img: imgSv1,
   },
   {
-    title: 'Website Improvement/Updates',
+    title: 'Website Improvement',
     description:
       'We provide solutions for website administrators, from improving traffic and user flow to handling routine page updates.',
     href: 'https://example.com/website-improvement',

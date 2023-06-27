@@ -20,16 +20,17 @@ export const HoverImageList = (props: HoverImageListProps) => {
   }
 
   return (
-    <div className={styleModule['hover-image-list']}>
-      <ul className={styleModule['headline-list']}>
+    <>
+      <ul className={styleModule['hover-image-list']}>
         {props.items.map((item, index) => (
-          <a href={item.href} key={index} >
-            <li
-              onMouseEnter={() => handleMouseEnter(index)}
-              className={`${styleModule['headline-item']} ${
-                hoveredIndex === index ? styleModule['hovered'] : ''
-              }`}
-            >
+          <li
+            onMouseEnter={() => handleMouseEnter(index)}
+            className={`${styleModule['headline-item']} ${
+              hoveredIndex === index ? styleModule['hovered'] : ''
+            }`}
+            key={index}
+          >
+            <a href={item.href}>
               <div className={styleModule['headline-title']}>
                 <span className={styleModule['dot']} />
                 <span className={styleModule['text']}>{item.title}</span>
@@ -37,25 +38,21 @@ export const HoverImageList = (props: HoverImageListProps) => {
               <div className={styleModule['headline-description']}>
                 {item.description}
               </div>
-            </li>
-          </a>
+            </a>
+            <div
+              className={`${styleModule['headline-image']} ${
+                hoveredIndex === index
+                  ? styleModule['fade-in']
+                  : styleModule['fade-out']
+              }`}
+              style={{ zIndex: hoveredIndex === index ? 1 : 0 }}
+            >
+              <img key={index} src={item.img} alt="imgSv" />
+            </div>
+          </li>
         ))}
       </ul>
-      <div className={styleModule['headline-image']}>
-        {props.items.map((item, index) => (
-          <img
-            key={index}
-            src={item.img}
-            alt="imgSv"
-            style={{ zIndex: hoveredIndex === index ? 1 : 0 }}
-            className={`${
-              hoveredIndex === index
-                ? styleModule['fade-in']
-                : styleModule['fade-out']
-            }`}
-          />
-        ))}
-      </div>
-    </div>
+      <div className="viewer" />
+    </>
   )
 }

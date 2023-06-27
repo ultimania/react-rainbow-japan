@@ -2,15 +2,12 @@
 // Service layout
 #layout-service {
   
-  .contents-main {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 70vh;
-  }
-  
   @media (min-width: 769px) {
     padding: 0 5vh 10vh;    
+
+    .contents-main {
+      height: 70vh;
+    }
   }
   @media (max-width: 768px) {
   }
