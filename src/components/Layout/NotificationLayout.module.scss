@@ -1,14 +1,18 @@
-
 // Notification layout
 #layout-notification {
-  padding: 0 5vh 10vh;
-
-  .contents-title {
-    margin-bottom: 0;
-  }
-
+  
   .contents-main {
     padding-top: 0;
   }
+  
+  @media (min-width: 769px) {
+    padding: 0 5vh 10vh;
+    .contents-title {
+    margin-bottom: 4ex;
+    }
+  }
 
+  @media (max-width: 768px) {
+      margin-bottom: 0;
+  }
 }
