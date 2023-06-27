@@ -1,15 +1,13 @@
 
 // Achievement layout
 #layout-achievement {
-  padding: 0 5vh 10vh;
 
   .pickup {
     position: relative;
     text-align: left;
-    margin-bottom: 48px;
+    margin-bottom: 20vh;
 
     .image {
-      width: 50%;
       position: relative;
 
       img {
@@ -20,12 +18,11 @@
 
     .card {
       position: absolute;
-      width: 45%;
       padding: 5%;
+      margin: 5%;
       background-color: #fff;
       right: 0;
-      top: 3ex;
-      margin: 2% 0;
+      top: 50%;
 
       .title {
         font-size: x-large;

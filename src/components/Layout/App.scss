@@ -28,7 +28,6 @@
   }
 
   &-main {
-    padding: 5ex 10px 10px 10px;
     margin: 10px 0px;
   }
 
@@ -50,12 +49,11 @@
     &-title {
       padding: 5ex 10px 10px 10px;
     }
-  
   }
   @media (max-width: 768px) {
     &-title {
       padding: 5px;
-    }  
+    }
   }
 }
 
