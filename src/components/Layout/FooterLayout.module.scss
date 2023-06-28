@@ -1,18 +1,20 @@
 // Footer layout
 #layout-footer {
+  .contact-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000;
+    color: #eee;
+  }
+  
+  .title {
+    font-size: x-large;
+    font-weight: bold;
+  }
   @media (min-width: 769px) {
     .contact-area {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: #000;
-      color: #eee;
       padding: 12vh 5vh;
-    }
-
-    .title {
-      font-size: x-large;
-      font-weight: bold;
     }
 
     .nav-area {
@@ -33,6 +35,10 @@
 
   // モバイル用
   @media (max-width: 768px) {
+    .contact-area {
+      padding: 6vh 5vh;
+    }
+
     .nav-area {
       display: flex;
       flex-direction: column;

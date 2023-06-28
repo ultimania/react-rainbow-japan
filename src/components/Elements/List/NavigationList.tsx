@@ -10,6 +10,7 @@ type NavigationItem = {
 
 type NavigationListProps = {
   items: NavigationItem[]
+  drawer?: boolean
 }
 
 export const NavigationList = (props: NavigationListProps) => {
@@ -55,8 +56,16 @@ export const NavigationList = (props: NavigationListProps) => {
   }
 
   return (
-    <nav className={`${styleModule['main']} ${isHamburgerOpen ? styleModule["active"] : ''}`}>
-      <ul className={`${isHamburgerOpen ? styleModule["active"] : ''}`}>
+    <nav
+      className={`${styleModule['main']} ${
+        isHamburgerOpen ? styleModule['active'] : ''
+      }`}
+    >
+      <ul
+        className={`${isHamburgerOpen ? styleModule['active'] : ''} ${
+          props.drawer ? styleModule['drawer'] : styleModule['non-drawer']
+        }`}
+      >
         {props.items.map((item, index) => (
           <li
             className={styleModule['nav-item']}
@@ -69,11 +78,30 @@ export const NavigationList = (props: NavigationListProps) => {
           </li>
         ))}
       </ul>
-      <button className={styleModule["hamburger"]} onClick={handleHumburgerClick}>
-        <span className={`${styleModule["bar"]} ${isHamburgerOpen ? styleModule["active"] : ''}`}></span>
-        <span className={`${styleModule["bar"]} ${isHamburgerOpen ? styleModule["active"] : ''}`}></span>
-        <span className={`${styleModule["bar"]} ${isHamburgerOpen ? styleModule["active"] : ''}`}></span>
-      </button>
+      {props.drawer ? (
+        <button
+          className={styleModule['hamburger']}
+          onClick={handleHumburgerClick}
+        >
+          <span
+            className={`${styleModule['bar']} ${
+              isHamburgerOpen ? styleModule['active'] : ''
+            }`}
+          ></span>
+          <span
+            className={`${styleModule['bar']} ${
+              isHamburgerOpen ? styleModule['active'] : ''
+            }`}
+          ></span>
+          <span
+            className={`${styleModule['bar']} ${
+              isHamburgerOpen ? styleModule['active'] : ''
+            }`}
+          ></span>
+        </button>
+      ) : (
+        ''
+      )}
     </nav>
   )
 }

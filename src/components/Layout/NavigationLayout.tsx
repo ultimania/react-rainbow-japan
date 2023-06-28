@@ -32,7 +32,7 @@ export const NavigationLayout = () => {
           <img src={siteLogo} className={styleModule["site-logo"]} alt="logo" />
         </div>
         <div className={styleModule["nav-area"]}>
-          <NavigationList items={headerNavItems} />
+          <NavigationList items={headerNavItems} drawer />
           <Button
             minimum={isScrolled}
             icon={IconEnum.Mail}
