@@ -8,9 +8,11 @@ type SimpleLinkProps = {
   href: string
   className?: string
   arrow?: boolean
+  drawer?: boolean
   effect?: string
   onMouseEnter?: (event: MouseEvent<HTMLAnchorElement>) => void
   onMouseLeave?: (event: MouseEvent<HTMLAnchorElement>) => void
+  onDrawerClick?: () => void
 }
 
 export const SimpleLink = (props: SimpleLinkProps) => {
@@ -33,24 +35,47 @@ export const SimpleLink = (props: SimpleLinkProps) => {
     }
   }
 
+  const handleDrawerClick = () => {
+    if (props.onDrawerClick) {
+      props.onDrawerClick()
+    }
+  }
+
   return (
-    <div className={`${styleModule['simple-link']} ${props.className}`}>
-      <a
-        href={props.href}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-      >
-        <span
-          className={`${styleModule['text']} ${
-            styleModule[props.effect ?? 'line']
-          }`}
+    <div className={`${styleModule['simple-link']}`}>
+      {props.drawer ? (
+        <div className={styleModule['drawer']} onClick={handleDrawerClick}>
+          <span
+            className={`${styleModule['text']} ${
+              styleModule[props.effect ?? 'line']
+            }`}
+          >
+            {props.children}
+          </span>
+          <span className={`${styleModule['dli-plus']}`} />
+        </div>
+      ) : (
+        <a
+          href={props.href}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
         >
-          {props.children}
-        </span>
-        <span className={`${styleModule['icon']} ${styleModule[props.effect ?? 'line']}`}>
-          {props.arrow && <NextIcon />}
-        </span>
-      </a>
+          <span
+            className={`${styleModule['text']} ${
+              styleModule[props.effect ?? 'line']
+            }`}
+          >
+            {props.children}
+          </span>
+          <span
+            className={`${styleModule['icon']} ${
+              styleModule[props.effect ?? 'line']
+            }`}
+          >
+            {props.arrow && <NextIcon />}
+          </span>
+        </a>
+      )}
     </div>
   )
 }

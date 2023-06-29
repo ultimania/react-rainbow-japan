@@ -30,9 +30,7 @@ export const NavigationList = (props: NavigationListProps) => {
       item.subItems && (
         <>
           <div
-            className={`${styleModule['submenu']} ${
-              hoverIndex === navIndex ? styleModule['hoverd'] : ''
-            }`}
+            className={`${styleModule['submenu']}`}
             onMouseEnter={() => handleItemHover(navIndex)}
           >
             <>
@@ -66,12 +64,18 @@ export const NavigationList = (props: NavigationListProps) => {
       >
         {props.items.map((item, index) => (
           <li
-            className={styleModule['nav-item']}
+            className={`${styleModule['nav-item']} ${hoverIndex === index ? styleModule['hoverd'] : ''}`}
             key={index}
             onMouseEnter={() => handleItemHover(index)}
             onMouseLeave={() => handleItemHover(null)}
           >
-            <SimpleLink href={item.href}>{item.name}</SimpleLink>
+            <SimpleLink
+              href={item.href}
+              drawer={props.drawer && item.subItems ? true : false}
+              onDrawerClick={()=>setHoverIndex(hoverIndex === index ? null : index)}
+            >
+              {item.name}
+            </SimpleLink>
             {renderSubMenu(item, index)}
           </li>
         ))}
