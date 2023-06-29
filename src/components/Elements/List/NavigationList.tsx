@@ -35,20 +35,18 @@ export const NavigationList = (props: NavigationListProps) => {
             }`}
             onMouseEnter={() => handleItemHover(navIndex)}
           >
-            {hoverIndex === navIndex && (
-              <>
-                <div className={styleModule['title']}>{`${item.name}TOP`}</div>
-                <div className={styleModule['nav-items']}>
-                  {item.subItems?.map((subItem, index) => (
-                    <div className={styleModule['nav-item']} key={index}>
-                      <SimpleLink href={subItem.href} arrow>
-                        {subItem.name}
-                      </SimpleLink>
-                    </div>
-                  ))}
-                </div>
-              </>
-            )}
+            <>
+              <div className={styleModule['title']}>{`${item.name}TOP`}</div>
+              <div className={styleModule['nav-items']}>
+                {item.subItems?.map((subItem, index) => (
+                  <div className={styleModule['nav-item']} key={index}>
+                    <SimpleLink href={subItem.href} arrow>
+                      {subItem.name}
+                    </SimpleLink>
+                  </div>
+                ))}
+              </div>
+            </>
           </div>
         </>
       )
