@@ -10,13 +10,11 @@ type NavigationItem = {
 
 type NavigationListProps = {
   items: NavigationItem[]
-  drawer?: boolean
 }
 
 export const NavigationList = (props: NavigationListProps) => {
   const [hoverIndex, setHoverIndex] = useState<number | null>(null)
   const [isHamburgerOpen, setIsHamburgerOpen] = useState<boolean>(false)
-  const drawerClassName: string = props.drawer ? 'drawer' : 'non-drawer'
 
   const handleHumburgerClick = () => {
     setIsHamburgerOpen(!isHamburgerOpen)
@@ -31,14 +29,14 @@ export const NavigationList = (props: NavigationListProps) => {
       <>
         <SimpleLink
           href={item.href}
-          drawer={props.drawer && item.subItems ? true : false}
+          drawer={"subItems"in item && isHamburgerOpen}
           onDrawerClick={() =>
             setHoverIndex(hoverIndex === navIndex ? null : navIndex)
           }
         >
           {item.name}
         </SimpleLink>
-        {item.subItems && 
+        {item.subItems && (
           <div
             className={`${styleModule['submenu']}`}
             onMouseEnter={() => handleItemHover(navIndex)}
@@ -54,7 +52,7 @@ export const NavigationList = (props: NavigationListProps) => {
               ))}
             </div>
           </div>
-        }
+        )}
       </>
     )
   }
@@ -65,11 +63,7 @@ export const NavigationList = (props: NavigationListProps) => {
         isHamburgerOpen && styleModule['active']
       }`}
     >
-      <ol
-        className={`${isHamburgerOpen && styleModule['active']} ${
-          styleModule[drawerClassName]
-        }`}
-      >
+      <ol className={`${isHamburgerOpen && styleModule['active']}`}>
         {props.items.map((item, index) => (
           <li
             className={`${styleModule['nav-item']} ${
@@ -83,21 +77,19 @@ export const NavigationList = (props: NavigationListProps) => {
           </li>
         ))}
       </ol>
-      {props.drawer && (
-        <button
-          className={styleModule['hamburger']}
-          onClick={handleHumburgerClick}
-        >
-          {Array.from({ length: 3 }, (_, index) => (
-            <span
-              className={`${styleModule['bar']} ${
-                isHamburgerOpen ? styleModule['active'] : ''
-              }`}
-              key={index}
-            />
-          ))}
-        </button>
-      )}
+      <button
+        className={styleModule['hamburger']}
+        onClick={handleHumburgerClick}
+      >
+        {Array.from({ length: 3 }, (_, index) => (
+          <span
+            className={`${styleModule['bar']} ${
+              isHamburgerOpen ? styleModule['active'] : ''
+            }`}
+            key={index}
+          />
+        ))}
+      </button>
     </nav>
   )
 }

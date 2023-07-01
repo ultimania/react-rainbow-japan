@@ -30,7 +30,7 @@ export const NavigationLayout = () => {
           <img src={siteLogo} className={styleModule['site-logo']} alt="logo" />
         </div>
         <div className={styleModule['nav-area']}>
-          <NavigationList items={headerNavItems} drawer />
+          <NavigationList items={headerNavItems} />
           <div
             className={`${styleModule['contact']} ${
               isScrolled ? styleModule['is-scrolled'] : ''

@@ -8,7 +8,7 @@ type SimpleLinkProps = {
   href: string
   className?: string
   arrow?: boolean
-  drawer?: boolean
+  drawer?: boolean | undefined
   effect?: string
   onMouseEnter?: (event: MouseEvent<HTMLAnchorElement>) => void
   onMouseLeave?: (event: MouseEvent<HTMLAnchorElement>) => void
