@@ -16,6 +16,7 @@ type NavigationListProps = {
 export const NavigationList = (props: NavigationListProps) => {
   const [hoverIndex, setHoverIndex] = useState<number | null>(null)
   const [isHamburgerOpen, setIsHamburgerOpen] = useState<boolean>(false)
+  const drawerClassName: string = props.drawer ? 'drawer' : 'non-drawer'
 
   const handleHumburgerClick = () => {
     setIsHamburgerOpen(!isHamburgerOpen)
@@ -25,84 +26,77 @@ export const NavigationList = (props: NavigationListProps) => {
     setHoverIndex(index)
   }
 
-  const renderSubMenu = (item: NavigationItem, navIndex: number) => {
+  const renderMenuItem = (item: NavigationItem, navIndex: number) => {
     return (
-      item.subItems && (
-        <>
+      <>
+        <SimpleLink
+          href={item.href}
+          drawer={props.drawer && item.subItems ? true : false}
+          onDrawerClick={() =>
+            setHoverIndex(hoverIndex === navIndex ? null : navIndex)
+          }
+        >
+          {item.name}
+        </SimpleLink>
+        {item.subItems && 
           <div
             className={`${styleModule['submenu']}`}
             onMouseEnter={() => handleItemHover(navIndex)}
           >
-            <>
-              <div className={styleModule['title']}>{`${item.name}TOP`}</div>
-              <div className={styleModule['nav-items']}>
-                {item.subItems?.map((subItem, index) => (
-                  <div className={styleModule['nav-item']} key={index}>
-                    <SimpleLink href={subItem.href} arrow>
-                      {subItem.name}
-                    </SimpleLink>
-                  </div>
-                ))}
-              </div>
-            </>
+            <div className={styleModule['title']}>{`${item.name}TOP`}</div>
+            <div className={styleModule['nav-items']}>
+              {item.subItems?.map((subItem, index) => (
+                <div className={styleModule['nav-item']} key={index}>
+                  <SimpleLink href={subItem.href} arrow>
+                    {subItem.name}
+                  </SimpleLink>
+                </div>
+              ))}
+            </div>
           </div>
-        </>
-      )
+        }
+      </>
     )
   }
 
   return (
     <nav
       className={`${styleModule['main']} ${
-        isHamburgerOpen ? styleModule['active'] : ''
+        isHamburgerOpen && styleModule['active']
       }`}
     >
-      <ul
-        className={`${isHamburgerOpen ? styleModule['active'] : ''} ${
-          props.drawer ? styleModule['drawer'] : styleModule['non-drawer']
+      <ol
+        className={`${isHamburgerOpen && styleModule['active']} ${
+          styleModule[drawerClassName]
         }`}
       >
         {props.items.map((item, index) => (
           <li
-            className={`${styleModule['nav-item']} ${hoverIndex === index ? styleModule['hoverd'] : ''}`}
+            className={`${styleModule['nav-item']} ${
+              hoverIndex === index && styleModule['hoverd']
+            }`}
             key={index}
             onMouseEnter={() => handleItemHover(index)}
             onMouseLeave={() => handleItemHover(null)}
           >
-            <SimpleLink
-              href={item.href}
-              drawer={props.drawer && item.subItems ? true : false}
-              onDrawerClick={()=>setHoverIndex(hoverIndex === index ? null : index)}
-            >
-              {item.name}
-            </SimpleLink>
-            {renderSubMenu(item, index)}
+            {renderMenuItem(item, index)}
           </li>
         ))}
-      </ul>
-      {props.drawer ? (
+      </ol>
+      {props.drawer && (
         <button
           className={styleModule['hamburger']}
           onClick={handleHumburgerClick}
         >
-          <span
-            className={`${styleModule['bar']} ${
-              isHamburgerOpen ? styleModule['active'] : ''
-            }`}
-          ></span>
-          <span
-            className={`${styleModule['bar']} ${
-              isHamburgerOpen ? styleModule['active'] : ''
-            }`}
-          ></span>
-          <span
-            className={`${styleModule['bar']} ${
-              isHamburgerOpen ? styleModule['active'] : ''
-            }`}
-          ></span>
+          {Array.from({ length: 3 }, (_, index) => (
+            <span
+              className={`${styleModule['bar']} ${
+                isHamburgerOpen ? styleModule['active'] : ''
+              }`}
+              key={index}
+            />
+          ))}
         </button>
-      ) : (
-        ''
       )}
     </nav>
   )

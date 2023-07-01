@@ -73,6 +73,16 @@ export const headerNavItems = [
   {
     name: 'Company Information',
     href: '/dummy',
+    subItems: [
+      {
+        name: 'Website Creation',
+        href: '/dummy',
+      },
+      {
+        name: 'Website Improvement/Updates',
+        href: '/dummy',
+      },
+    ],
   },
   {
     name: 'Careers',
