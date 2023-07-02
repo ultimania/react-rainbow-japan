@@ -19,7 +19,6 @@ nav.main {
         background-color: #fff;
         left: 0;
         z-index: 0;
-        transition: opacity 0.3s;
 
         .title {
           text-align: left;
@@ -54,20 +53,26 @@ nav.main {
 
         .submenu {
           position: fixed;
-          top: 48px;
-          padding: 5vh;
           align-items: center;
+          padding: 5vh;
           opacity: 0;
+          z-index: 0;
+          visibility: hidden;
+          transition: all 0.3s;
 
-          &.hoverd {
-            z-index: 11;
-            opacity: 1;
-          }
           .nav-items {
             display: grid;
             grid-template-columns: repeat(3, 43%);
             grid-template-rows: repeat(3, 43%);
             grid-column: 3;
+          }
+        }
+
+        &.hoverd {
+          .submenu {
+            visibility: visible;
+            opacity: 1;
+            transition: all 0.3s;
           }
         }
       }
