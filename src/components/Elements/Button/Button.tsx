@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react'
-import { IconEnum } from '../../Types'
+import { IconEnum } from '../../../assets/Types'
 import { Icon } from '../Icon'
 import styleModule from './Button.module.scss'
 

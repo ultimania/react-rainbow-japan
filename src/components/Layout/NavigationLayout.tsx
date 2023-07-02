@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { NavigationList } from '../Elements/List'
 import { Button } from '../Elements/Button'
-import { IconEnum } from '../Types'
+import { IconEnum } from '../../assets/Types'
 import siteLogo from '../../assets/siteLogo.svg'
 import styleModule from './NavigationLayout.module.scss'
 

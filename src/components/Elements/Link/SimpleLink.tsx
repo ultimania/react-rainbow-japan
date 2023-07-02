@@ -1,6 +1,6 @@
 import React, { ReactNode, MouseEvent, useState } from 'react'
 import styleModule from './SimpleLink.module.scss'
-import { IconEnum } from '../../Types'
+import { IconEnum } from '../../../assets/Types'
 import { Icon } from '../Icon'
 
 type SimpleLinkProps = {

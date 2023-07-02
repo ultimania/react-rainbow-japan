@@ -2,6 +2,10 @@ import React, { useState } from 'react'
 import { SimpleLink } from '../Link'
 import styleModule from './NavigationList.module.scss'
 
+import type { RootState } from '../../../store'
+import { useSelector, useDispatch } from 'react-redux'
+import { toggle } from '../../../modules/isHamburgerOpenSlice'
+
 type NavigationItem = {
   name: string
   href: string
@@ -14,11 +18,8 @@ type NavigationListProps = {
 
 export const NavigationList = (props: NavigationListProps) => {
   const [hoverIndex, setHoverIndex] = useState<number | null>(null)
-  const [isHamburgerOpen, setIsHamburgerOpen] = useState<boolean>(false)
-
-  const handleHumburgerClick = () => {
-    setIsHamburgerOpen(!isHamburgerOpen)
-  }
+  const isHamburgerOpen = useSelector((state: RootState) => state.isHamburgerOpen)
+  const dispatch = useDispatch()
 
   const handleItemHover = (index: number | null) => {
     setHoverIndex(index)
@@ -79,7 +80,7 @@ export const NavigationList = (props: NavigationListProps) => {
       </ol>
       <button
         className={styleModule['hamburger']}
-        onClick={handleHumburgerClick}
+        onClick={() => dispatch(toggle())}
       >
         {Array.from({ length: 3 }, (_, index) => (
           <span

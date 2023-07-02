@@ -1,4 +1,4 @@
-import { IconEnum } from "../../Types";
+import { IconEnum } from "../../../assets/Types";
 import {
   MailOutline,
   ArrowUpward,
