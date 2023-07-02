@@ -82,7 +82,7 @@ export const NavigationList = (props: NavigationListProps) => {
         className={styleModule['hamburger']}
         onClick={() => dispatch(toggle())}
       >
-        {Array.from({ length: 3 }, (_, index) => (
+        {Array.from({ length: 2 }, (_, index) => (
           <span
             className={`${styleModule['bar']} ${
               isHamburgerOpen ? styleModule['active'] : ''

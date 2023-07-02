@@ -93,16 +93,11 @@ nav.main {
           transition: top 0.24s, transform 0.24s, opacity 0.24s;
 
           &:nth-child(1) {
-            top: 0;
+            top: 20%;
           }
 
           &:nth-child(2) {
-            top: 50%;
-            transform: translateY(-50%);
-          }
-
-          &:nth-child(3) {
-            top: 100%;
+            bottom: 20%;
             transform: translateY(-100%);
           }
 
@@ -112,11 +107,6 @@ nav.main {
           }
 
           &.active:nth-child(2) {
-            transform: translate(50%, -50%);
-            opacity: 0;
-          }
-
-          &.active:nth-child(3) {
             top: 50%;
             transform: translateY(-50%) rotate(-135deg);
           }
