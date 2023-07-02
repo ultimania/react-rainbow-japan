@@ -1,10 +1,10 @@
-import { configureStore } from "@reduxjs/toolkit";
-import { isHamburgerOpenReducer } from "./modules/isHamburgerOpenSlice";
+import { configureStore } from '@reduxjs/toolkit'
+import { isHamburgerOpenReducer } from './modules/isHamburgerOpenSlice'
 
 export const store = configureStore({
   reducer: {
-    isHamburgerOpen: isHamburgerOpenReducer
-  }
+    isHamburgerOpen: isHamburgerOpenReducer,
+  },
 })
 
 export type RootState = ReturnType<typeof store.getState>
