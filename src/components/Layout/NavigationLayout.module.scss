@@ -9,6 +9,7 @@
   @media (min-width: 769px) {
     .header {
       display: flex;
+      align-items: center;
       height: fit-content;
       justify-content: space-between;
       padding: 10px 15px;
@@ -16,8 +17,6 @@
       box-sizing: border-box;
 
       .site-logo-area {
-        display: flex;
-        justify-content: flex-start;
 
         img.site-logo {
           width: 100px;
