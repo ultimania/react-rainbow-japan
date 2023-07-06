@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/static/css/main.c9d102d3.css",
+    "main.js": "/static/js/main.3fa9af48.js",
+    "static/js/787.519706fa.chunk.js": "/static/js/787.519706fa.chunk.js",
+    "static/media/img_achievement_03.webp": "/static/media/img_achievement_03.460cfee58d1cb9fe9bc4.webp",
+    "static/media/img_mv_03.webp": "/static/media/img_mv_03.bf586619abedd36b8d1d.webp",
+    "static/media/img_mv_02.webp": "/static/media/img_mv_02.53c4e40a6a39bafebeef.webp",
+    "static/media/img_achievement_01.webp": "/static/media/img_achievement_01.8494a0f40a93f66a01cc.webp",
+    "static/media/img_achievement_04.webp": "/static/media/img_achievement_04.9035481e98042928d894.webp",
+    "static/media/img_service_04.webp": "/static/media/img_service_04.669bc4fba8cec36fe22e.webp",
+    "static/media/img_achievement_02.webp": "/static/media/img_achievement_02.a6f2f4b7d65938c123bd.webp",
+    "static/media/img_service_03.webp": "/static/media/img_service_03.3f7c38af386cee982b14.webp",
+    "static/media/img_service_01.webp": "/static/media/img_service_01.eeb6b6ab4e71b4e54cea.webp",
+    "static/media/img_mv_01.webp": "/static/media/img_mv_01.37f712431daa88c4943e.webp",
+    "static/media/img_service_02.webp": "/static/media/img_service_02.da2f68fbb6a955a79d76.webp",
+    "index.html": "/index.html",
+    "static/media/siteLogo.svg": "/static/media/siteLogo.1db450b8104b08316658f13e3082640a.svg",
+    "main.c9d102d3.css.map": "/static/css/main.c9d102d3.css.map",
+    "main.3fa9af48.js.map": "/static/js/main.3fa9af48.js.map",
+    "787.519706fa.chunk.js.map": "/static/js/787.519706fa.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c9d102d3.css",
+    "static/js/main.3fa9af48.js"
+  ]
+}
